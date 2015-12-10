@@ -1,0 +1,12 @@
+{
+  "name": "json-creator",
+  "version": "1.0.0",
+  "description": "create json from schemas",
+  "dependencies": {
+    "fs": "0.0.2",
+    "json-schema-faker": "^0.2.5",
+    "node-dir": "^0.1.10",
+    "node-jsrender": "^1.0.6",
+    "to-title-case": "^0.1.5"
+  }
+}

@@ -1,0 +1,16 @@
+{
+        "title": "createUserOutput",
+        "type":"object",
+        "properties":{
+            "email":{
+                "type": "string"
+            },
+            "id":{
+                "type": "integer"
+            },
+            "token":{
+            	"type": "string"
+            }
+        },
+        "required": ["email", "id", "token"]
+}

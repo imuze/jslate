@@ -1,0 +1,21 @@
+{
+        "title": "createUserInput",
+        "method": "POST",
+        "route": "/users",
+        "type":"object",
+        "properties":{
+            "email":{
+                "type": "string"
+            },
+            "password":{
+                "type": "string"
+            },
+            "name":{
+                "type": "string"
+            },
+            "birthdate":{
+                "type": "integer"
+            }
+        },
+        "required": ["email", "password", "birthdate"]
+}

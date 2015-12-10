@@ -1,0 +1,47 @@
+## {{:section_name}}   
+
+```ruby
+require 'kittn'
+
+api = Kittn::APIClient.authorize!('meowmeowmeow')
+api.kittens.get
+```
+
+```python
+import kittn
+
+api = kittn.authorize('meowmeowmeow')
+api.kittens.get()
+```
+
+```shell
+curl "http://example.com/api/kittens"
+  -H "Authorization: meowmeowmeow"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{{:json_example}}
+```
+
+{{:schema.description}}
+
+### HTTP Request
+
+`{{:schema.method}} {{:domain}}{{:schema.route}}`
+
+### Query Parameters
+
+Parameter | Type
+--------- | -----------
+{{props schema.properties }}{{>key}} | {{>prop.type}}
+{{/props}}
+
+<aside class="notice">
+Required properties are : {{:schema.required}}
+</aside>
+
+<aside class="success">
+Remember — a happy kitten is an iMuze kitten!
+</aside>
