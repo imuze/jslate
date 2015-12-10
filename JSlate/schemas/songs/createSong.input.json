@@ -1,0 +1,23 @@
+{
+    "title": "createSongInput",
+    "description": "This endpoint create a song.",
+    "method": "POST",
+    "route": "/songs",
+    "type": "object",
+    "properties": {
+        "text_seed": {
+            "type": "string"
+        },
+        "musical_mode": {
+            "enum": ["Ionian", "Dorian", "Phrygian", "Lydian", "Mixolydia", "Aeolian", "Locrian"]
+        },
+        "arrangement_id": {
+            "oneOf": [{
+                "type": "integer"
+            }, {
+                "type": "null"
+            }]
+        }
+    },
+    "required": ["text_seed", "musical_mode", "arrangement_id"]
+}

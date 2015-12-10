@@ -1,0 +1,66 @@
+{
+    "title": "createSongOutput",
+    "description": "This endpoint create a song.",
+    "method": "POST",
+    "route": "/songs",
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "integer"
+        },
+        "text_seed": {
+            "type": "string"
+        },
+        "musical_mode": {
+            "enum": ["Ionian", "Dorian", "Phrygian", "Lydian", "Mixolydia", "Aeolian", "Locrian"]
+        },
+        "arrangement_id": {
+            "oneOf": [{
+                "type": "integer"
+            }, {
+                "type": "null"
+            }]
+        },
+        "timeline": {
+            "id": "timeline",
+            "type": "object",
+            "properties": {
+                "amplitude": {
+                    "type": "integer"
+                },
+                "lowest": {
+                    "type": "integer"
+                },
+                "keys": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "duration": {
+                                "type": "integer"
+                            },
+                            "time": {
+                                "type": "integer"
+                            },
+                            "value": {
+                                "type": "integer"
+                            },
+                            "letter": {
+                                "type": "string"
+                            }
+                        },
+                        "required": ["duration", "time", "value"]
+                    }
+                }
+            },
+            "required": ["amplitude", "lowest", "keys"]
+        },
+        "mp3": {
+            "type": "string"
+        },
+        "status_channel": {
+            "type": "string"
+        }
+    },
+    "required": ["text_seed", "musical_mode", "arrangement_id", "timeline", "mp3", "status_channel"]
+}

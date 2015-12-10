@@ -1,5 +1,6 @@
 {
         "title": "createUserInput",
+        "description": "This endpoint create an user.",
         "method": "POST",
         "route": "/users",
         "type":"object",
