@@ -9,7 +9,7 @@ var path = require('path');
 var titlize = require('to-title-case');
 
 var domain = "https://imuze.io"
-var languages = ['curl', 'python'];
+var languages = ['shell', 'json', 'python', 'ruby'];
 var package_name = "imusdk";
 var indexDotMd = '';
 jsrender.helpers({displayJSON: function(json){ return JSON.stringify(json, null, 4);}});
@@ -22,7 +22,9 @@ jsrender.loadFileSync('#moduleIntro', './templates/module-intro.jsr');
 jsrender.loadFileSync('#mainIntro', './templates/main-intro.jsr');
 
 function jslate() {
-    indexDotMd += jsrender.render['#mainIntro']();
+    indexDotMd += jsrender.render['#mainIntro']({
+        languages: languages,
+    });
 
     indexDotMd += generate_modules();
 
@@ -109,6 +111,7 @@ function generate_markdown(module_name, input_schema, input_example, output_exam
         return {
             name: value,
             input_example: input_example,
+            output_example: output_example,
             package_name: package_name,
             ressource: module_name,
             api_key: "API_KEY_EXAMPLE",
