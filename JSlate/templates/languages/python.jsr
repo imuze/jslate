@@ -1,0 +1,6 @@
+```python
+import {{>package_name}}
+
+api = {{>package_name}}.authorize("{{>api_key}}")
+api.{{>ressource}}.{{>method.toLowerCase()}}()
+```
