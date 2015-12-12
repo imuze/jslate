@@ -1,0 +1,6 @@
+```ruby
+require '{{>package_name}}'
+
+api = {{>package_name}}::APIClient.authorize!('{{>api_key}}')
+api.{{>ressource}}.{{>method.toLowerCase()}}
+```

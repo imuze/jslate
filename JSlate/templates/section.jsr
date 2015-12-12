@@ -1,19 +1,5 @@
 ## {{:section_name}}   
 
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
-
-
-
-```shell
-curl "http://example.com/api/kittens"
-  -H "Authorization: meowmeowmeow"
-```
-
 
 {{for languages}}
 {{include #data tmpl="#lang"+#data.name /}}
@@ -22,7 +8,7 @@ curl "http://example.com/api/kittens"
 
 > The above command returns JSON structured like this:
 
-```json
+```moonscript
 {{:json_example}}
 ```
 
