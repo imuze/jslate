@@ -1,0 +1,4 @@
+curl "{{>domain}}{{>route}}"
+  -H "Content-Type: application/json"
+  -H "Authorization: {{>api_key}}"
+  -X {{>method}} -d '{{:~displayJSON(input_example)}}'
