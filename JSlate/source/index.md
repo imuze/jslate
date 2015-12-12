@@ -28,49 +28,72 @@ api = Kittn::APIClient.authorize!('meowmeowmeow')
 api.kittens.get
 ```
 
-```python
-import kittn
 
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
 
 ```shell
 curl "http://example.com/api/kittens"
   -H "Authorization: meowmeowmeow"
 ```
 
+
+
+curl "https://imuze.io/songs"
+  -H "Content-Type: application/json"
+  -H "Authorization: API_KEY_EXAMPLE"
+  -X POST -d '{
+    "text_seed": "nemo ex occaecati voluptatum",
+    "musical_mode": "Locrian",
+    "arrangement_id": null
+}'
+
+
+```python
+import imusdk
+
+api = imusdk.authorize("API_KEY_EXAMPLE")
+api.songs.post()
+```
+
+
+
 > The above command returns JSON structured like this:
 
 ```json
 {
-    "text_seed": "qui inventore quia ut pariatur",
-    "musical_mode": "Locrian",
+    "text_seed": "voluptatibus eum tempora sint",
+    "musical_mode": "Mixolydia",
     "arrangement_id": null,
     "timeline": {
-        "amplitude": 35441137,
-        "lowest": 48263636,
+        "amplitude": -36394963,
+        "lowest": 93609569,
         "keys": [
             {
-                "duration": 78169625,
-                "time": -47974585,
-                "value": -93138875
+                "duration": -37919773,
+                "time": -81584326,
+                "value": 46715301,
+                "letter": "dignissimos nostrum quidem"
             },
             {
-                "duration": 78391640,
-                "time": 38296866,
-                "value": 59761311
+                "duration": 30478829,
+                "time": -37483854,
+                "value": -59688143,
+                "letter": "libero animi adipisci"
             },
             {
-                "duration": -96229664,
-                "time": -98596491,
-                "value": 23810297
+                "duration": 43488924,
+                "time": -50040619,
+                "value": 87898484
+            },
+            {
+                "duration": 72524900,
+                "time": -38733577,
+                "value": -95020167
             }
         ]
     },
-    "mp3": "aspernatur fugit officiis animi",
-    "status_channel": "sunt",
-    "id": 68722262
+    "mp3": "saepe",
+    "status_channel": "ducimus recusandae consequatur quia culpa",
+    "id": -98532048
 }
 ```
 
@@ -107,25 +130,41 @@ api = Kittn::APIClient.authorize!('meowmeowmeow')
 api.kittens.get
 ```
 
-```python
-import kittn
 
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
 
 ```shell
 curl "http://example.com/api/kittens"
   -H "Authorization: meowmeowmeow"
 ```
 
+
+
+curl "https://imuze.io/users"
+  -H "Content-Type: application/json"
+  -H "Authorization: API_KEY_EXAMPLE"
+  -X POST -d '{
+    "email": "dolorem magnam dolores quidem",
+    "password": "ipsam et qui corrupti",
+    "birthdate": -41138792
+}'
+
+
+```python
+import imusdk
+
+api = imusdk.authorize("API_KEY_EXAMPLE")
+api.users.post()
+```
+
+
+
 > The above command returns JSON structured like this:
 
 ```json
 {
-    "email": "quia temporibus numquam illum impedit",
-    "id": -74110817,
-    "token": "dolore est aut"
+    "email": "non",
+    "id": -53153211,
+    "token": "eum"
 }
 ```
 

@@ -9,15 +9,20 @@ var path = require('path');
 var titlize = require('to-title-case');
 
 var domain = "https://imuze.io"
+var languages = ['curl', 'python'];
+var package_name = "imusdk";
 var indexDotMd = '';
+jsrender.helpers({displayJSON: function(json){ return JSON.stringify(json, null, 4);}});
 
-
+languages.forEach(function(language){
+    jsrender.loadFileSync('#lang'+language, './templates/languages/'+language+'.jsr');
+});
 jsrender.loadFileSync('#section', './templates/section.jsr');
 jsrender.loadFileSync('#moduleIntro', './templates/module-intro.jsr');
 jsrender.loadFileSync('#mainIntro', './templates/main-intro.jsr');
 
 function jslate() {
-        indexDotMd += jsrender.render['#mainIntro']();
+    indexDotMd += jsrender.render['#mainIntro']();
 
     indexDotMd += generate_modules();
 
@@ -55,6 +60,7 @@ function generate_modules() {
 
 function generate_module(module_dir) {
     var self = this;
+    var module_name = path.basename(module_dir);
     self.result = "";
     self.result += generate_module_intro(module_dir);
 
@@ -76,7 +82,7 @@ function generate_module(module_dir) {
             var input_example = generate_example(input_example_path, input_schema);
             var output_example = generate_example(output_example_path, output_schema);
 
-            var markdown = generate_markdown(input_schema, output_example);
+            var markdown = generate_markdown(module_name, input_schema, input_example, output_example);
             self.result += markdown;
         }
 
@@ -96,13 +102,28 @@ function generate_module_intro(module_dir) {
     return res;
 }
 
-function generate_markdown(input_schema, output_example) {
+function generate_markdown(module_name, input_schema, input_example, output_example) {
     //    console.log(jsrender);
+
+    languages_info = languages.map(function(value){
+        return {
+            name: value,
+            input_example: input_example,
+            package_name: package_name,
+            ressource: module_name,
+            api_key: "API_KEY_EXAMPLE",
+            domain: domain,
+            route: input_schema.route,
+            method: input_schema.method || "GET"
+        }
+    })
+
     var res = jsrender.render['#section']({
         section_name: input_schema.title,
         json_example: JSON.stringify(output_example, null, 4),
         domain: domain || "",
-        schema: input_schema
+        schema: input_schema,
+        languages: languages_info
     });
     //    console.log(res);
     return res;
