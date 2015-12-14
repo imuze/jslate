@@ -1,0 +1,9 @@
+{
+        "title": "Index songs",
+        "description": "This endpoint retrieves a list of songs.",
+        "method": "GET",
+        "route": "/songs",
+        "type":"object",
+        "properties":{
+        }
+}

@@ -1,8 +1,8 @@
 {
         "title": "Create a user",
-        "description": "This endpoint creates an user.",
-        "method": "POST",
-        "route": "/users",
+        "description": "This endpoint updates a user.",
+        "method": "PUT",
+        "route": "/users/:id",
         "type":"object",
         "properties":{
             "email":{
@@ -17,6 +17,5 @@
             "birthdate":{
                 "type": "integer"
             }
-        },
-        "required": ["email", "password", "birthdate"]
+        }
 }

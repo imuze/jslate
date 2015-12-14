@@ -1,0 +1,29 @@
+{
+        "type":"object",
+        "properties":{
+           "count": {
+                "type": "integer"
+            },
+           "previous": {
+                "type": "integer"
+            },
+           "next": {
+                "type": "integer"
+            },
+            "songs":{
+                "type": "array",
+                "items":{
+                        "type":"object",
+                        "properties":{
+                                "id":{
+                                        "type": "integer"
+                                },
+                                "name":{
+                                        "type": "string"
+                                }
+                        }
+                }
+            }
+        },
+        "required": ["arrangements"]
+}

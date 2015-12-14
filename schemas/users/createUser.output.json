@@ -1,5 +1,5 @@
 {
-        "title": "createUserOutput",
+        "title": "deleteUserOutput",
         "type":"object",
         "properties":{
             "email":{

@@ -1,0 +1,12 @@
+{
+        "title": "Delete a user",
+        "description": "This endpoint deletes a user.",
+        "method": "DELETE",
+        "route": "/users/:id",
+        "type":"object",
+        "properties":{
+            "id":{
+                "type": "integer"
+            }
+        }
+}
