@@ -2,9 +2,15 @@
 title: API Reference
 
 language_tabs:
+
   - shell
-  - ruby
+
+  - json
+
   - python
+
+  - ruby
+
 
 toc_footers:
   - <a href='#'>Sign Up for a Developer Key</a>
@@ -18,151 +24,332 @@ search: true
 
 # Introduction
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+# Arrangements
 
-This example API documentation page was created with [Slate](http://github.com/tripit/slate). Feel free to edit it and use it as a base for your own API's documentation.
+## Show an arrangement
 
-# Authentication
 
-> To authorize, use this code:
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-```
 
 ```shell
-# With shell, you can just pass the correct header with each request
-curl "api_endpoint_here"
-  -H "Authorization: meowmeowmeow"
+curl "https://GR.io/arrangements/:id"
+  -H "Content-Type: application/json"
+  -H "Authorization: API_KEY_EXAMPLE"
+  -X GET -d '{
+    "id": -62267971
+}'
 ```
-
-> Make sure to replace `meowmeowmeow` with your API key.
-
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
-
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
-
-`Authorization: meowmeowmeow`
-
-<aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
-</aside>
-
-# Kittens
-
-## Get All Kittens
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
-
-```shell
-curl "http://example.com/api/kittens"
-  -H "Authorization: meowmeowmeow"
-```
-
-> The above command returns JSON structured like this:
-
-```json
-[
-  {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
-  },
-  {
-    "id": 2,
-    "name": "Isis",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
-  }
-]
-```
-
-This endpoint retrieves all kittens.
-
-### HTTP Request
-
-`GET http://example.com/api/kittens`
-
-### Query Parameters
-
-Parameter | Default | Description
---------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
-
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-
-## Get a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/2"
-  -H "Authorization: meowmeowmeow"
-```
-
-> The above command returns JSON structured like this:
 
 ```json
 {
-  "id": 2,
-  "name": "Isis",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
+    "id": -62267971
 }
 ```
 
-This endpoint retrieves a specific kitten.
+```python
+import imusdk
 
-<aside class="warning">If you're not using an administrator API key, note that some kittens will return 403 Forbidden if they are hidden for admins only.</aside>
+api = imusdk.authorize("API_KEY_EXAMPLE")
+api.arrangements.get()
+```
+
+```ruby
+require 'imusdk'
+
+api = imusdk::APIClient.authorize!('API_KEY_EXAMPLE')
+api.arrangements.get
+```
+
+
+
+> The above command returns JSON structured like this:
+
+```moonscript
+{
+    "arrangements": [
+        {
+            "name": "quia deserunt aut"
+        },
+        {
+            "id": 22250009
+        },
+        {
+            "id": -69669205,
+            "name": "est"
+        },
+        {},
+        {
+            "name": "vitae",
+            "id": 59222289
+        }
+    ]
+}
+```
+
+This endpoint shows an arrangement.
 
 ### HTTP Request
 
-`GET http://example.com/kittens/<ID>`
+`GET https://GR.io/arrangements/:id`
 
-### URL Parameters
+### Query Parameters
 
-Parameter | Description
+Parameter | Type
 --------- | -----------
-ID | The ID of the kitten to retrieve
+id | integer
 
+
+<aside class="notice">
+Required properties are : 
+</aside>
+
+<aside class="success">
+Remember — a happy kitten is an GR kitten!
+</aside>
+# Songs
+
+## createSongInput
+
+
+
+```shell
+curl "https://GR.io/songs"
+  -H "Content-Type: application/json"
+  -H "Authorization: API_KEY_EXAMPLE"
+  -X POST -d '{
+    "text_seed": "eius",
+    "musical_mode": "Phrygian",
+    "arrangement_id": -718040
+}'
+```
+
+```json
+{
+    "text_seed": "eius",
+    "musical_mode": "Phrygian",
+    "arrangement_id": -718040
+}
+```
+
+```python
+import imusdk
+
+api = imusdk.authorize("API_KEY_EXAMPLE")
+api.songs.post()
+```
+
+```ruby
+require 'imusdk'
+
+api = imusdk::APIClient.authorize!('API_KEY_EXAMPLE')
+api.songs.post
+```
+
+
+
+> The above command returns JSON structured like this:
+
+```moonscript
+{
+    "text_seed": "odio",
+    "musical_mode": "Dorian",
+    "arrangement_id": -27810638,
+    "timeline": {
+        "amplitude": -91357298,
+        "lowest": -14455097,
+        "keys": [
+            {
+                "duration": 90975846,
+                "time": 5067926,
+                "value": 76751752
+            },
+            {
+                "duration": 16619311,
+                "time": -67553730,
+                "value": 68192535,
+                "letter": "quia"
+            },
+            {
+                "duration": -9968560,
+                "time": -85376665,
+                "value": -33126058,
+                "letter": "quod"
+            },
+            {
+                "duration": 27546855,
+                "time": -24226529,
+                "value": 74611580,
+                "letter": "consequuntur quam incidunt est"
+            },
+            {
+                "duration": -1404159,
+                "time": 95805808,
+                "value": -67037570
+            }
+        ]
+    },
+    "mp3": "praesentium voluptatem soluta sed ex",
+    "status_channel": "eligendi ab",
+    "id": 56160746
+}
+```
+
+This endpoint create a song.
+
+### HTTP Request
+
+`POST https://GR.io/songs`
+
+### Query Parameters
+
+Parameter | Type
+--------- | -----------
+text_seed | string
+musical_mode | 
+arrangement_id | 
+
+
+<aside class="notice">
+Required properties are : text_seed,musical_mode,arrangement_id
+</aside>
+
+<aside class="success">
+Remember — a happy kitten is an GR kitten!
+</aside>
+## Show a song
+
+
+
+```shell
+curl "https://GR.io/songs/:id"
+  -H "Content-Type: application/json"
+  -H "Authorization: API_KEY_EXAMPLE"
+  -X GET -d '{}'
+```
+
+```json
+{}
+```
+
+```python
+import imusdk
+
+api = imusdk.authorize("API_KEY_EXAMPLE")
+api.songs.get()
+```
+
+```ruby
+require 'imusdk'
+
+api = imusdk::APIClient.authorize!('API_KEY_EXAMPLE')
+api.songs.get
+```
+
+
+
+> The above command returns JSON structured like this:
+
+```moonscript
+{
+    "title": "cupiditate consectetur qui et amet",
+    "mp3": "quia dolore"
+}
+```
+
+This endpoint shows a song.
+
+### HTTP Request
+
+`GET https://GR.io/songs/:id`
+
+### Query Parameters
+
+Parameter | Type
+--------- | -----------
+id | integer
+
+
+<aside class="notice">
+Required properties are : 
+</aside>
+
+<aside class="success">
+Remember — a happy kitten is an GR kitten!
+</aside>
+# Users
+
+## createUserInput
+
+
+
+```shell
+curl "https://GR.io/users"
+  -H "Content-Type: application/json"
+  -H "Authorization: API_KEY_EXAMPLE"
+  -X POST -d '{
+    "email": "nam voluptate ea deleniti praesentium",
+    "password": "praesentium quod nemo",
+    "birthdate": -71763612,
+    "name": "suscipit architecto est quae aliquid"
+}'
+```
+
+```json
+{
+    "email": "nam voluptate ea deleniti praesentium",
+    "password": "praesentium quod nemo",
+    "birthdate": -71763612,
+    "name": "suscipit architecto est quae aliquid"
+}
+```
+
+```python
+import imusdk
+
+api = imusdk.authorize("API_KEY_EXAMPLE")
+api.users.post()
+```
+
+```ruby
+require 'imusdk'
+
+api = imusdk::APIClient.authorize!('API_KEY_EXAMPLE')
+api.users.post
+```
+
+
+
+> The above command returns JSON structured like this:
+
+```moonscript
+{
+    "email": "tenetur ea veniam",
+    "id": -74330620,
+    "token": "quibusdam eveniet"
+}
+```
+
+This endpoint create an user.
+
+### HTTP Request
+
+`POST https://GR.io/users`
+
+### Query Parameters
+
+Parameter | Type
+--------- | -----------
+email | string
+password | string
+name | string
+birthdate | integer
+
+
+<aside class="notice">
+Required properties are : email,password,birthdate
+</aside>
+
+<aside class="success">
+Remember — a happy kitten is an GR kitten!
+</aside>
