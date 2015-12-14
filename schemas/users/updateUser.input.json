@@ -1,5 +1,5 @@
 {
-        "title": "Create a user",
+        "title": "Update a user",
         "description": "This endpoint updates a user.",
         "method": "PUT",
         "route": "/users/:id",

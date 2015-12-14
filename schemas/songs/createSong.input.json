@@ -1,5 +1,5 @@
 {
-    "title": "createSongInput",
+    "title": "Createa a song",
     "description": "This endpoint create a song.",
     "method": "POST",
     "route": "/songs",
