@@ -1,20 +1,21 @@
 {
-        "type":"object",
-        "properties":{
-            "arrangements":{
-                "type": "array",
-                "items":{
-                        "type":"object",
-                        "properties":{
-                                "id":{
-                                        "type": "integer"
-                                },
-                                "name":{
-                                        "type": "string"
-                                }
-                        }
+    "type": "object",
+    "properties": {
+        "arrangements": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "minimum": 0
+                    },
+                    "name": {
+                        "type": "string"
+                    }
                 }
             }
-        },
-        "required": ["arrangements"]
+        }
+    },
+    "required": ["arrangements"]
 }

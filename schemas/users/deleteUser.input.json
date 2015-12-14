@@ -6,7 +6,8 @@
         "type":"object",
         "properties":{
             "id":{
-                "type": "integer"
+                "type": "integer",
+                "minimum": 0
             }
         }
 }

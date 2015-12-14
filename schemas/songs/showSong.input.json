@@ -1,12 +1,13 @@
 {
-        "title": "Show a song",
-        "description": "This endpoint shows a song.",
-        "method": "GET",
-        "route": "/songs/:id",
-        "type":"object",
-        "properties":{
-                "id":{
-                        "type": "integer"
-                }
+    "title": "Show a song",
+    "description": "This endpoint shows a song.",
+    "method": "GET",
+    "route": "/songs/:id",
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "integer",
+            "minimum": 0
         }
+    }
 }

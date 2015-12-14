@@ -1,19 +1,20 @@
 {
-        "title": "createUserOutput",
-        "type":"object",
-        "properties":{
-            "id":{
-                "type": "integer"
-            },
-            "email":{
-                "type": "string"
-            },
-            "name":{
-                "type": "string"
-            },
-            "birthdate":{
-                "type": "integer"
-            }
+    "title": "createUserOutput",
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "integer",
+            "minimum": 0
         },
-        "required": ["id", "email", "name", "birthdate"]
+        "email": {
+            "type": "string"
+        },
+        "name": {
+            "type": "string"
+        },
+        "birthdate": {
+            "type": "integer"
+        }
+    },
+    "required": ["id", "email", "name", "birthdate"]
 }

@@ -1,48 +1,51 @@
 {
-        "type":"object",
-        "properties":{
-                "id":{
-                        "type": "integer"
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "integer",
+            "minimum": 0
+        },
+        "title": {
+            "type": "string"
+        },
+        "timeline": {
+            "id": "timeline",
+            "type": "object",
+            "properties": {
+                "amplitude": {
+                    "type": "integer"
                 },
-                "title":{
-                        "type": "string"
+                "lowest": {
+                    "type": "integer"
                 },
-                "timeline": {
-                    "id": "timeline",
-                    "type": "object",
-                    "properties": {
-                        "amplitude": {
-                            "type": "integer"
-                        },
-                        "lowest": {
-                            "type": "integer"
-                        },
-                        "keys": {
-                            "type": "array",
-                            "items": {
-                                "type": "object",
-                                "properties": {
-                                    "duration": {
-                                        "type": "integer"
-                                    },
-                                    "time": {
-                                        "type": "integer"
-                                    },
-                                    "value": {
-                                        "type": "integer"
-                                    },
-                                    "letter": {
-                                        "type": "string"
-                                    }
-                                },
-                                "required": ["duration", "time", "value"]
+                "keys": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "duration": {
+                                "type": "integer"
+                            },
+                            "time": {
+                                "type": "integer"
+                            },
+                            "value": {
+                                "type": "integer"
+                            },
+                            "letter": {
+                                "type": "string",
+                                "minLength": 1,
+                                "maxLength": 1,
                             }
-                        }
-                    },
-                    "required": ["amplitude", "lowest", "keys"]
-                },
-                "mp3":{
-                        "type": "string"
+                        },
+                        "required": ["duration", "time", "value"]
+                    }
                 }
+            },
+            "required": ["amplitude", "lowest", "keys"]
+        },
+        "mp3": {
+            "type": "string"
         }
+    }
 }

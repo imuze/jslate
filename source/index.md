@@ -65,18 +65,11 @@ api.arrangements.get
 {
     "arrangements": [
         {
-            "name": "ut sunt ut nisi asperiores",
-            "id": -58833527
+            "id": 31540481,
+            "name": "quisquam qui rerum quos"
         },
         {
-            "name": "qui quo numquam ab similique"
-        },
-        {
-            "id": -66499429
-        },
-        {
-            "id": -87381292,
-            "name": "at eos voluptate"
+            "id": 32352646
         }
     ]
 }
@@ -99,7 +92,7 @@ Required properties are :
 </aside>
 
 <aside class="success">
-Remember — a happy kitten is an iMuze kitten!
+Remember — Results may vary according to your authentication scope !
 </aside>
 ## Show an arrangement
 
@@ -109,11 +102,15 @@ Remember — a happy kitten is an iMuze kitten!
 curl "https://imuze.io/arrangements/:id"
   -H "Content-Type: application/json"
   -H "Authorization: API_KEY_EXAMPLE"
-  -X GET -d '{}'
+  -X GET -d '{
+    "id": 17601693
+}'
 ```
 
 ```json
-{}
+{
+    "id": 17601693
+}
 ```
 
 ```python
@@ -137,10 +134,11 @@ api.arrangements.get
 ```moonscript
 {
     "arrangements": [
-        {
-            "id": -535590
-        },
         {},
+        {
+            "name": "soluta consequatur",
+            "id": -39529905
+        },
         {}
     ]
 }
@@ -164,11 +162,11 @@ Required properties are :
 </aside>
 
 <aside class="success">
-Remember — a happy kitten is an iMuze kitten!
+Remember — Results may vary according to your authentication scope !
 </aside>
 # Songs
 
-## createSongInput
+## Createa a song
 
 
 
@@ -177,17 +175,17 @@ curl "https://imuze.io/songs"
   -H "Content-Type: application/json"
   -H "Authorization: API_KEY_EXAMPLE"
   -X POST -d '{
-    "text_seed": "magnam reprehenderit explicabo ipsum incidunt",
-    "musical_mode": "Ionian",
-    "arrangement_id": 15970227
+    "text_seed": "in laborum explicabo molestias inventore",
+    "musical_mode": "Mixolydia",
+    "arrangement_id": null
 }'
 ```
 
 ```json
 {
-    "text_seed": "magnam reprehenderit explicabo ipsum incidunt",
-    "musical_mode": "Ionian",
-    "arrangement_id": 15970227
+    "text_seed": "in laborum explicabo molestias inventore",
+    "musical_mode": "Mixolydia",
+    "arrangement_id": null
 }
 ```
 
@@ -211,45 +209,24 @@ api.songs.post
 
 ```moonscript
 {
-    "text_seed": "numquam eum dolorem iste est",
-    "musical_mode": "Mixolydia",
-    "arrangement_id": null,
+    "text_seed": "doloribus",
+    "musical_mode": "Ionian",
+    "arrangement_id": -85512468,
     "timeline": {
-        "amplitude": -39272541,
-        "lowest": -58557802,
+        "amplitude": -936035,
+        "lowest": -87342209,
         "keys": [
             {
-                "duration": -54766220,
-                "time": 3264738,
-                "value": 21114115
-            },
-            {
-                "duration": -69879021,
-                "time": 82132032,
-                "value": 69271583
-            },
-            {
-                "duration": -61634673,
-                "time": -77396819,
-                "value": -13306298,
-                "letter": "vero optio quos"
-            },
-            {
-                "duration": -19633404,
-                "time": 81843948,
-                "value": -46099330
-            },
-            {
-                "duration": 28255809,
-                "time": 80030669,
-                "value": -32983445,
-                "letter": "vero aut"
+                "duration": 91552196,
+                "time": 90598574,
+                "value": -17710514,
+                "letter": "id fugiat molestiae magni voluptatum"
             }
         ]
     },
-    "mp3": "impedit",
-    "status_channel": "minima esse doloremque illo",
-    "id": 28828415
+    "mp3": "nihil modi sit inventore",
+    "status_channel": "reprehenderit dolores sunt",
+    "id": -86518723
 }
 ```
 
@@ -273,7 +250,7 @@ Required properties are : text_seed,musical_mode,arrangement_id
 </aside>
 
 <aside class="success">
-Remember — a happy kitten is an iMuze kitten!
+Remember — Results may vary according to your authentication scope !
 </aside>
 ## Delete a song
 
@@ -283,15 +260,11 @@ Remember — a happy kitten is an iMuze kitten!
 curl "https://imuze.io/songs/:id"
   -H "Content-Type: application/json"
   -H "Authorization: API_KEY_EXAMPLE"
-  -X DELETE -d '{
-    "id": 10240623
-}'
+  -X DELETE -d '{}'
 ```
 
 ```json
-{
-    "id": 10240623
-}
+{}
 ```
 
 ```python
@@ -314,7 +287,7 @@ api.songs.delete
 
 ```moonscript
 {
-    "id": -4298484
+    "id": -27581073
 }
 ```
 
@@ -336,7 +309,7 @@ Required properties are :
 </aside>
 
 <aside class="success">
-Remember — a happy kitten is an iMuze kitten!
+Remember — Results may vary according to your authentication scope !
 </aside>
 ## Index songs
 
@@ -373,11 +346,25 @@ api.songs.get
 
 ```moonscript
 {
-    "next": 29433177,
-    "count": -66772087,
+    "count": 77755893,
+    "previous": -48928398,
+    "next": 372282,
     "songs": [
+        {},
         {
-            "id": 87246354
+            "name": "ex eum laborum blanditiis ea",
+            "id": -8046785
+        },
+        {
+            "name": "vel dolores consequatur",
+            "id": 73301593
+        },
+        {
+            "name": "dicta et",
+            "id": 58373263
+        },
+        {
+            "id": -70857743
         }
     ]
 }
@@ -400,7 +387,7 @@ Required properties are :
 </aside>
 
 <aside class="success">
-Remember — a happy kitten is an iMuze kitten!
+Remember — Results may vary according to your authentication scope !
 </aside>
 ## Show a song
 
@@ -437,34 +424,29 @@ api.songs.get
 
 ```moonscript
 {
-    "id": 85224553,
-    "title": "suscipit labore",
     "timeline": {
-        "amplitude": -16969861,
-        "lowest": 43199947,
+        "amplitude": -24232272,
+        "lowest": -31298316,
         "keys": [
             {
-                "duration": 99263196,
-                "time": -36443261,
-                "value": 37863815
+                "duration": -88921890,
+                "time": -96258299,
+                "value": -6207572,
+                "letter": "laboriosam"
             },
             {
-                "duration": -38219842,
-                "time": -76355172,
-                "value": -32450595
+                "duration": 93728195,
+                "time": 20413783,
+                "value": 66301015
             },
             {
-                "duration": 66896300,
-                "time": -37624619,
-                "value": 87419094
-            },
-            {
-                "duration": 26177789,
-                "time": -8772643,
-                "value": 22457401
+                "duration": -43306233,
+                "time": 14974049,
+                "value": -59875189
             }
         ]
-    }
+    },
+    "mp3": "magni expedita eos tenetur nemo"
 }
 ```
 
@@ -486,7 +468,7 @@ Required properties are :
 </aside>
 
 <aside class="success">
-Remember — a happy kitten is an iMuze kitten!
+Remember — Results may vary according to your authentication scope !
 </aside>
 # Tags
 
@@ -524,7 +506,14 @@ api.tags.get
 > The above command returns JSON structured like this:
 
 ```moonscript
-{}
+{
+    "count": 67723897,
+    "tags": [
+        {
+            "id": 33834886
+        }
+    ]
+}
 ```
 
 This endpoint retrieves a list of tags.
@@ -544,7 +533,7 @@ Required properties are :
 </aside>
 
 <aside class="success">
-Remember — a happy kitten is an iMuze kitten!
+Remember — Results may vary according to your authentication scope !
 </aside>
 # Users
 
@@ -557,17 +546,19 @@ curl "https://imuze.io/users"
   -H "Content-Type: application/json"
   -H "Authorization: API_KEY_EXAMPLE"
   -X POST -d '{
-    "email": "voluptatum aliquam dolor esse debitis",
-    "password": "recusandae vel",
-    "birthdate": -47732115
+    "email": "corrupti quo atque",
+    "password": "impedit omnis",
+    "birthdate": 8827362,
+    "name": "aut"
 }'
 ```
 
 ```json
 {
-    "email": "voluptatum aliquam dolor esse debitis",
-    "password": "recusandae vel",
-    "birthdate": -47732115
+    "email": "corrupti quo atque",
+    "password": "impedit omnis",
+    "birthdate": 8827362,
+    "name": "aut"
 }
 ```
 
@@ -591,9 +582,9 @@ api.users.post
 
 ```moonscript
 {
-    "email": "recusandae quibusdam optio repudiandae maxime",
-    "id": 58647909,
-    "token": "aspernatur"
+    "email": "ipsa qui iure",
+    "id": -88028629,
+    "token": "quo autem"
 }
 ```
 
@@ -618,7 +609,7 @@ Required properties are : email,password,birthdate
 </aside>
 
 <aside class="success">
-Remember — a happy kitten is an iMuze kitten!
+Remember — Results may vary according to your authentication scope !
 </aside>
 ## Delete a user
 
@@ -629,13 +620,13 @@ curl "https://imuze.io/users/:id"
   -H "Content-Type: application/json"
   -H "Authorization: API_KEY_EXAMPLE"
   -X DELETE -d '{
-    "id": 81646224
+    "id": 92257450
 }'
 ```
 
 ```json
 {
-    "id": 81646224
+    "id": 92257450
 }
 ```
 
@@ -659,7 +650,7 @@ api.users.delete
 
 ```moonscript
 {
-    "id": 38000603
+    "id": 3895408
 }
 ```
 
@@ -681,9 +672,9 @@ Required properties are :
 </aside>
 
 <aside class="success">
-Remember — a happy kitten is an iMuze kitten!
+Remember — Results may vary according to your authentication scope !
 </aside>
-## Create a user
+## Update a user
 
 
 
@@ -692,13 +683,17 @@ curl "https://imuze.io/users/:id"
   -H "Content-Type: application/json"
   -H "Authorization: API_KEY_EXAMPLE"
   -X PUT -d '{
-    "name": "qui adipisci dolores et"
+    "password": "consequatur deleniti eveniet",
+    "name": "optio",
+    "email": "beatae"
 }'
 ```
 
 ```json
 {
-    "name": "qui adipisci dolores et"
+    "password": "consequatur deleniti eveniet",
+    "name": "optio",
+    "email": "beatae"
 }
 ```
 
@@ -722,10 +717,10 @@ api.users.put
 
 ```moonscript
 {
-    "id": -39933344,
-    "email": "accusantium neque maxime minus",
-    "name": "ea voluptatem iusto",
-    "birthdate": 50323479
+    "id": -26518312,
+    "email": "incidunt cupiditate error",
+    "name": "pariatur sint commodi",
+    "birthdate": 7725103
 }
 ```
 
@@ -750,5 +745,5 @@ Required properties are :
 </aside>
 
 <aside class="success">
-Remember — a happy kitten is an iMuze kitten!
+Remember — Results may vary according to your authentication scope !
 </aside>

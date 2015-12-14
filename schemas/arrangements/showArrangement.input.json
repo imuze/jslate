@@ -1,12 +1,13 @@
 {
-        "title": "Show an arrangement",
-        "description": "This endpoint shows an arrangement.",
-        "method": "GET",
-        "route": "/arrangements/:id",
-        "type":"object",
-        "properties":{
-                "id":{
-                        "type": "integer"
-                }
+    "title": "Show an arrangement",
+    "description": "This endpoint shows an arrangement.",
+    "method": "GET",
+    "route": "/arrangements/:id",
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "integer",
+            "minimum": 0
         }
+    }
 }

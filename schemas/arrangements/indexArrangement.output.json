@@ -2,13 +2,16 @@
         "type":"object",
         "properties":{
            "count": {
-                "type": "integer"
+               "type": "integer",
+               "minimum": 0
             },
            "previous": {
-                "type": "integer"
+                "type": "integer",
+                "minimum": 0
             },
            "next": {
-                "type": "integer"
+                "type": "integer",
+                "minimum": 0
             },
             "arrangements":{
                 "type": "array",
@@ -16,7 +19,8 @@
                         "type":"object",
                         "properties":{
                                 "id":{
-                                        "type": "integer"
+                                    "type": "integer",
+                                    "minimum": 0
                                 },
                                 "name":{
                                         "type": "string"
