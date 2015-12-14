@@ -8,23 +8,40 @@ var jsrender = require('node-jsrender');
 var path = require('path');
 var titlize = require('to-title-case');
 
-var domain = "https://imuze.io"
-var languages = ['shell', 'json', 'python', 'ruby'];
-var package_name = "imusdk";
-var intro_text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-
-
+var domain;
+var languages;
+var package_name;
+var intro_text;
 var indexDotMd = '';
-jsrender.helpers({displayJSON: function(json){ return JSON.stringify(json, null, 4);}});
 
-languages.forEach(function(language){
-    jsrender.loadFileSync('#lang'+language, './templates/languages/'+language+'.jsr');
-});
-jsrender.loadFileSync('#section', './templates/section.jsr');
-jsrender.loadFileSync('#moduleIntro', './templates/module-intro.jsr');
-jsrender.loadFileSync('#mainIntro', './templates/main-intro.jsr');
+function init() {
+//    var domain = "https://imuze.io"
+//    var languages = ['shell', 'json', 'python', 'ruby'];
+//    var package_name = "imusdk";
+//    var intro_text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    config = file2json(__dirname + "/config.json");
+    domain = config.domain;
+    languages = config.languages;
+    package_name = config.package_name;
+    intro_text = config.intro_text;
+    indexDotMd = '';
+    jsrender.helpers({
+        displayJSON: function (json) {
+            return JSON.stringify(json, null, 4);
+        }
+    });
+    languages.forEach(function (language) {
+        jsrender.loadFileSync('#lang' + language, './templates/languages/' + language + '.jsr');
+    });
+    jsrender.loadFileSync('#section', './templates/section.jsr');
+    jsrender.loadFileSync('#moduleIntro', './templates/module-intro.jsr');
+    jsrender.loadFileSync('#mainIntro', './templates/main-intro.jsr');
+}
+
 
 function jslate() {
+    init();
+    console.log(languages);
     indexDotMd += jsrender.render['#mainIntro']({
         intro_text: intro_text,
         languages: languages,
@@ -42,11 +59,11 @@ function jslate() {
 }
 
 function dirList(dir) {
-  return fs.readdirSync(dir).reduce(function(list, file) {
-    var name = path.join(dir, file);
-    var isDir = fs.statSync(name).isDirectory();
-    return list.concat(isDir ? name : []);
-  }, []);
+    return fs.readdirSync(dir).reduce(function (list, file) {
+        var name = path.join(dir, file);
+        var isDir = fs.statSync(name).isDirectory();
+        return list.concat(isDir ? name : []);
+    }, []);
 }
 
 function generate_modules() {
@@ -71,8 +88,6 @@ function generate_module(module_dir) {
     self.result += generate_module_intro(module_dir);
 
     self.readFileCallback = function (input_schema_path) {
-        console.log("ss");
-
         console.log(input_schema_path);
         if (input_schema_path.match("\.input\.json$")) {
             console.log(input_schema_path);
@@ -110,8 +125,8 @@ function generate_module_intro(module_dir) {
 
 function generate_markdown(module_name, input_schema, input_example, output_example) {
     //    console.log(jsrender);
-
-    languages_info = languages.map(function(value){
+    console.log(languages);
+    var languages_info = languages.map(function (value) {
         return {
             name: value,
             input_example: input_example,
@@ -138,12 +153,12 @@ function generate_markdown(module_name, input_schema, input_example, output_exam
 
 function generate_example(exampleFileName, schema) {
     var res = new jsf(schema);
-    console.log("creating"+exampleFileName);
+    console.log("creating" + exampleFileName);
     fs.writeFile(exampleFileName, JSON.stringify(res, null, 4), 'utf-8', function (err) {
         if (err) {
             return console.log(err);
         }
-        console.log("The file was saved!");
+        console.log("The file has been saved!");
     });
     return res;
 }
@@ -156,7 +171,7 @@ function output_path(input_schema_path) {
     return input_schema_path.replace(".input.json", ".output.json");
 }
 
-function file2json(file_name){
+function file2json(file_name) {
     return JSON.parse(fs.readFileSync(file_name).toString());
 }
 

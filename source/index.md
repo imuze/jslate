@@ -33,17 +33,17 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 
 ```shell
-curl "https://GR.io/arrangements/:id"
+curl "https://imuze.io/arrangements/:id"
   -H "Content-Type: application/json"
   -H "Authorization: API_KEY_EXAMPLE"
   -X GET -d '{
-    "id": -62267971
+    "id": -70215631
 }'
 ```
 
 ```json
 {
-    "id": -62267971
+    "id": -70215631
 }
 ```
 
@@ -69,19 +69,18 @@ api.arrangements.get
 {
     "arrangements": [
         {
-            "name": "quia deserunt aut"
+            "name": "sed optio accusamus"
         },
         {
-            "id": 22250009
+            "name": "blanditiis consectetur accusamus id voluptatem"
         },
         {
-            "id": -69669205,
-            "name": "est"
+            "id": 80304975,
+            "name": "et"
         },
-        {},
         {
-            "name": "vitae",
-            "id": 59222289
+            "name": "rem delectus temporibus maxime",
+            "id": -92090732
         }
     ]
 }
@@ -91,7 +90,7 @@ This endpoint shows an arrangement.
 
 ### HTTP Request
 
-`GET https://GR.io/arrangements/:id`
+`GET https://imuze.io/arrangements/:id`
 
 ### Query Parameters
 
@@ -105,7 +104,7 @@ Required properties are :
 </aside>
 
 <aside class="success">
-Remember — a happy kitten is an GR kitten!
+Remember — a happy kitten is an iMuze kitten!
 </aside>
 # Songs
 
@@ -114,21 +113,21 @@ Remember — a happy kitten is an GR kitten!
 
 
 ```shell
-curl "https://GR.io/songs"
+curl "https://imuze.io/songs"
   -H "Content-Type: application/json"
   -H "Authorization: API_KEY_EXAMPLE"
   -X POST -d '{
-    "text_seed": "eius",
-    "musical_mode": "Phrygian",
-    "arrangement_id": -718040
+    "text_seed": "ut ipsa consequatur est",
+    "musical_mode": "Locrian",
+    "arrangement_id": 93496724
 }'
 ```
 
 ```json
 {
-    "text_seed": "eius",
-    "musical_mode": "Phrygian",
-    "arrangement_id": -718040
+    "text_seed": "ut ipsa consequatur est",
+    "musical_mode": "Locrian",
+    "arrangement_id": 93496724
 }
 ```
 
@@ -152,46 +151,33 @@ api.songs.post
 
 ```moonscript
 {
-    "text_seed": "odio",
-    "musical_mode": "Dorian",
-    "arrangement_id": -27810638,
+    "text_seed": "alias",
+    "musical_mode": "Phrygian",
+    "arrangement_id": -4849518,
     "timeline": {
-        "amplitude": -91357298,
-        "lowest": -14455097,
+        "amplitude": -41517912,
+        "lowest": -54139829,
         "keys": [
             {
-                "duration": 90975846,
-                "time": 5067926,
-                "value": 76751752
+                "duration": 24850709,
+                "time": 93001721,
+                "value": -84129381,
+                "letter": "omnis"
             },
             {
-                "duration": 16619311,
-                "time": -67553730,
-                "value": 68192535,
-                "letter": "quia"
+                "duration": 68207794,
+                "time": 41222504,
+                "value": -90301335
             },
             {
-                "duration": -9968560,
-                "time": -85376665,
-                "value": -33126058,
-                "letter": "quod"
-            },
-            {
-                "duration": 27546855,
-                "time": -24226529,
-                "value": 74611580,
-                "letter": "consequuntur quam incidunt est"
-            },
-            {
-                "duration": -1404159,
-                "time": 95805808,
-                "value": -67037570
+                "duration": -69019138,
+                "time": -14592787,
+                "value": 95378091
             }
         ]
     },
-    "mp3": "praesentium voluptatem soluta sed ex",
-    "status_channel": "eligendi ab",
-    "id": 56160746
+    "mp3": "culpa consequatur voluptatem explicabo",
+    "status_channel": "modi nulla ea facere quae"
 }
 ```
 
@@ -199,7 +185,7 @@ This endpoint create a song.
 
 ### HTTP Request
 
-`POST https://GR.io/songs`
+`POST https://imuze.io/songs`
 
 ### Query Parameters
 
@@ -215,21 +201,25 @@ Required properties are : text_seed,musical_mode,arrangement_id
 </aside>
 
 <aside class="success">
-Remember — a happy kitten is an GR kitten!
+Remember — a happy kitten is an iMuze kitten!
 </aside>
 ## Show a song
 
 
 
 ```shell
-curl "https://GR.io/songs/:id"
+curl "https://imuze.io/songs/:id"
   -H "Content-Type: application/json"
   -H "Authorization: API_KEY_EXAMPLE"
-  -X GET -d '{}'
+  -X GET -d '{
+    "id": 78316863
+}'
 ```
 
 ```json
-{}
+{
+    "id": 78316863
+}
 ```
 
 ```python
@@ -252,8 +242,42 @@ api.songs.get
 
 ```moonscript
 {
-    "title": "cupiditate consectetur qui et amet",
-    "mp3": "quia dolore"
+    "title": "reiciendis libero deserunt",
+    "mp3": "similique soluta",
+    "id": -12953574,
+    "timeline": {
+        "amplitude": 62478027,
+        "lowest": 57983110,
+        "keys": [
+            {
+                "duration": -80106287,
+                "time": -20781624,
+                "value": -65579291
+            },
+            {
+                "duration": -62304716,
+                "time": -6745049,
+                "value": 79916008,
+                "letter": "quas nostrum aut vel"
+            },
+            {
+                "duration": -15013326,
+                "time": -97131027,
+                "value": 80738902,
+                "letter": "perferendis sed rerum quo"
+            },
+            {
+                "duration": 75121423,
+                "time": 72012826,
+                "value": -35160392
+            },
+            {
+                "duration": -96115509,
+                "time": -88224309,
+                "value": 85143083
+            }
+        ]
+    }
 }
 ```
 
@@ -261,7 +285,7 @@ This endpoint shows a song.
 
 ### HTTP Request
 
-`GET https://GR.io/songs/:id`
+`GET https://imuze.io/songs/:id`
 
 ### Query Parameters
 
@@ -275,7 +299,7 @@ Required properties are :
 </aside>
 
 <aside class="success">
-Remember — a happy kitten is an GR kitten!
+Remember — a happy kitten is an iMuze kitten!
 </aside>
 # Users
 
@@ -284,23 +308,23 @@ Remember — a happy kitten is an GR kitten!
 
 
 ```shell
-curl "https://GR.io/users"
+curl "https://imuze.io/users"
   -H "Content-Type: application/json"
   -H "Authorization: API_KEY_EXAMPLE"
   -X POST -d '{
-    "email": "nam voluptate ea deleniti praesentium",
-    "password": "praesentium quod nemo",
-    "birthdate": -71763612,
-    "name": "suscipit architecto est quae aliquid"
+    "email": "molestiae voluptatem quibusdam",
+    "password": "voluptatem velit magnam",
+    "birthdate": 89195929,
+    "name": "ipsa"
 }'
 ```
 
 ```json
 {
-    "email": "nam voluptate ea deleniti praesentium",
-    "password": "praesentium quod nemo",
-    "birthdate": -71763612,
-    "name": "suscipit architecto est quae aliquid"
+    "email": "molestiae voluptatem quibusdam",
+    "password": "voluptatem velit magnam",
+    "birthdate": 89195929,
+    "name": "ipsa"
 }
 ```
 
@@ -324,9 +348,9 @@ api.users.post
 
 ```moonscript
 {
-    "email": "tenetur ea veniam",
-    "id": -74330620,
-    "token": "quibusdam eveniet"
+    "email": "ut quis",
+    "id": -28117867,
+    "token": "ab minus perferendis nesciunt"
 }
 ```
 
@@ -334,7 +358,7 @@ This endpoint create an user.
 
 ### HTTP Request
 
-`POST https://GR.io/users`
+`POST https://imuze.io/users`
 
 ### Query Parameters
 
@@ -351,5 +375,5 @@ Required properties are : email,password,birthdate
 </aside>
 
 <aside class="success">
-Remember — a happy kitten is an GR kitten!
+Remember — a happy kitten is an iMuze kitten!
 </aside>
