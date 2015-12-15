@@ -35,7 +35,7 @@
                             "letter": {
                                 "type": "string",
                                 "minLength": 1,
-                                "maxLength": 1,
+                                "maxLength": 1
                             }
                         },
                         "required": ["duration", "time", "value"]

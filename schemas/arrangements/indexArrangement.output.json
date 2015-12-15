@@ -1,33 +1,33 @@
 {
-        "type":"object",
-        "properties":{
-           "count": {
-               "type": "integer",
-               "minimum": 0
-            },
-           "previous": {
-                "type": "integer",
-                "minimum": 0
-            },
-           "next": {
-                "type": "integer",
-                "minimum": 0
-            },
-            "arrangements":{
-                "type": "array",
-                "items":{
-                        "type":"object",
-                        "properties":{
-                                "id":{
-                                    "type": "integer",
-                                    "minimum": 0
-                                },
-                                "name":{
-                                        "type": "string"
-                                }
-                        }
+    "type": "object",
+    "properties": {
+        "count": {
+            "type": "integer",
+            "minimum": 0
+        },
+        "previous": {
+            "type": "integer",
+            "minimum": 0
+        },
+        "next": {
+            "type": "integer",
+            "minimum": 0
+        },
+        "arrangements": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "minimum": 0
+                    },
+                    "name": {
+                        "type": "string"
+                    }
                 }
             }
-        },
-        "required": ["arrangements"]
+        }
+    },
+    "required": ["arrangements"]
 }
