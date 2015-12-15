@@ -1,0 +1,16 @@
+{
+    "title": "Authenticate",
+    "description": "This endpoint permits a registered user to authenticate.",
+    "method": "PUT",
+    "route": "/authenticate",
+    "type": "object",
+    "properties": {
+        "email": {
+            "type": "string"
+        },
+        "password": {
+            "type": "string"
+        }
+    },
+    "required": ["email", "password"]
+}
