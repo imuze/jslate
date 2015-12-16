@@ -33,7 +33,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 
 ```shell
-curl "https://imuze.io/arrangements"
+curl "https://api.imuze.io/arrangements"
   -H "Content-Type: application/json"
   -H "Authorization: API_KEY_EXAMPLE"
   -X GET -d '{}'
@@ -65,12 +65,20 @@ api.arrangements.get
 {
     "arrangements": [
         {
-            "name": "et qui est beatae dolor",
-            "id": 55316393
-        }
+            "id": 38718265,
+            "name": "animi voluptatem soluta at nulla"
+        },
+        {
+            "name": "nihil quaerat",
+            "id": 60951525
+        },
+        {
+            "id": 24989615
+        },
+        {}
     ],
-    "previous": 15764294,
-    "count": 99520428
+    "next": 86796268,
+    "previous": 53006148
 }
 ```
 
@@ -78,7 +86,7 @@ This endpoint retrieves a list of arrangements.
 
 ### HTTP Request
 
-`GET https://imuze.io/arrangements`
+`GET https://api.imuze.io/arrangements`
 
 ### Query Parameters
 
@@ -98,18 +106,14 @@ Remember — Results may vary according to your authentication scope !
 
 
 ```shell
-curl "https://imuze.io/arrangements/:id"
+curl "https://api.imuze.io/arrangements/:id"
   -H "Content-Type: application/json"
   -H "Authorization: API_KEY_EXAMPLE"
-  -X GET -d '{
-    "id": 32062045
-}'
+  -X GET -d '{}'
 ```
 
 ```json
-{
-    "id": 32062045
-}
+{}
 ```
 
 ```python
@@ -134,11 +138,11 @@ api.arrangements.get
 {
     "arrangements": [
         {
-            "name": "ut numquam",
-            "id": 29696275
+            "id": 24705756
         },
         {
-            "name": "et magni"
+            "name": "in aut vero rerum",
+            "id": 16587284
         },
         {}
     ]
@@ -149,7 +153,7 @@ This endpoint shows an arrangement.
 
 ### HTTP Request
 
-`GET https://imuze.io/arrangements/:id`
+`GET https://api.imuze.io/arrangements/:id`
 
 ### Query Parameters
 
@@ -172,19 +176,19 @@ Remember — Results may vary according to your authentication scope !
 
 
 ```shell
-curl "https://imuze.io/authenticate"
+curl "https://api.imuze.io/authenticate"
   -H "Content-Type: application/json"
   -H "Authorization: API_KEY_EXAMPLE"
   -X PUT -d '{
-    "email": "et",
-    "password": "quis nisi blanditiis quas"
+    "email": "temporibus ut eos dicta occaecati",
+    "password": "amet odit"
 }'
 ```
 
 ```json
 {
-    "email": "et",
-    "password": "quis nisi blanditiis quas"
+    "email": "temporibus ut eos dicta occaecati",
+    "password": "amet odit"
 }
 ```
 
@@ -207,14 +211,16 @@ api.authentication.put
 > The above command returns JSON structured like this:
 
 ```moonscript
-{}
+{
+    "token": "fuga"
+}
 ```
 
 This endpoint permits a registered user to authenticate.
 
 ### HTTP Request
 
-`PUT https://imuze.io/authenticate`
+`PUT https://api.imuze.io/authenticate`
 
 ### Query Parameters
 
@@ -236,21 +242,21 @@ Remember — Results may vary according to your authentication scope !
 
 
 ```shell
-curl "https://imuze.io/oauth"
+curl "https://api.imuze.io/oauth"
   -H "Content-Type: application/json"
   -H "Authorization: API_KEY_EXAMPLE"
   -X PUT -d '{
-    "provider": "facebook",
-    "provider_token": "esse quo consectetur blanditiis",
-    "uuid": "et voluptatem"
+    "provider": "twitter",
+    "provider_token": "qui beatae est",
+    "uuid": "incidunt perspiciatis"
 }'
 ```
 
 ```json
 {
-    "provider": "facebook",
-    "provider_token": "esse quo consectetur blanditiis",
-    "uuid": "et voluptatem"
+    "provider": "twitter",
+    "provider_token": "qui beatae est",
+    "uuid": "incidunt perspiciatis"
 }
 ```
 
@@ -274,8 +280,7 @@ api.authentication.put
 
 ```moonscript
 {
-    "token": "et dolores et odio aut",
-    "user_id": -90149151
+    "user_id": 84858003
 }
 ```
 
@@ -283,7 +288,7 @@ This endpoint permits to authenticate with an external provider (OAuth).
 
 ### HTTP Request
 
-`PUT https://imuze.io/oauth`
+`PUT https://api.imuze.io/oauth`
 
 ### Query Parameters
 
@@ -308,21 +313,29 @@ Remember — Results may vary according to your authentication scope !
 
 
 ```shell
-curl "https://imuze.io/songs"
+curl "https://api.imuze.io/songs"
   -H "Content-Type: application/json"
   -H "Authorization: API_KEY_EXAMPLE"
   -X POST -d '{
-    "text_seed": "modi",
-    "musical_mode": "Ionian",
-    "arrangement_id": null
+    "text_seed": "ut dolorum asperiores qui et",
+    "musical_mode": "Lydian",
+    "arrangement_id": 74822509,
+    "tags": [
+        "labore minus molestiae unde ex",
+        "quisquam omnis magnam odit ea"
+    ]
 }'
 ```
 
 ```json
 {
-    "text_seed": "modi",
-    "musical_mode": "Ionian",
-    "arrangement_id": null
+    "text_seed": "ut dolorum asperiores qui et",
+    "musical_mode": "Lydian",
+    "arrangement_id": 74822509,
+    "tags": [
+        "labore minus molestiae unde ex",
+        "quisquam omnis magnam odit ea"
+    ]
 }
 ```
 
@@ -346,42 +359,34 @@ api.songs.post
 
 ```moonscript
 {
-    "text_seed": "et",
-    "musical_mode": "Lydian",
-    "arrangement_id": 8278457,
+    "text_seed": "inventore dolorum",
+    "musical_mode": "Phrygian",
+    "arrangement_id": 67720832,
     "timeline": {
-        "amplitude": 57197202,
-        "lowest": 93669344,
+        "amplitude": 65837679,
+        "lowest": -76879246,
         "keys": [
             {
-                "duration": -91828052,
-                "time": -41395699,
-                "value": -40127155,
-                "letter": "quasi amet tempore et"
+                "duration": 65341202,
+                "time": -4987263,
+                "value": 46136557,
+                "letter": "quia dolor accusamus"
             },
             {
-                "duration": 79750239,
-                "time": 51975518,
-                "value": -84273642,
-                "letter": "quas est tempore"
+                "duration": 74000395,
+                "time": 94109139,
+                "value": 67341762
             },
             {
-                "duration": 70617740,
-                "time": -74623566,
-                "value": -29926190,
-                "letter": "quasi facilis voluptatum et"
-            },
-            {
-                "duration": -12581605,
-                "time": -47480984,
-                "value": -64784189,
-                "letter": "dolorem quod nulla minus ut"
+                "duration": 61251097,
+                "time": -64275627,
+                "value": 17445174,
+                "letter": "a sed eaque consequatur ex"
             }
         ]
     },
-    "mp3": "deserunt et expedita unde consequatur",
-    "status_channel": "itaque omnis error",
-    "id": 22804824
+    "mp3": "qui voluptatibus voluptatem alias",
+    "status_channel": "eius ut mollitia aspernatur"
 }
 ```
 
@@ -389,7 +394,7 @@ This endpoint create a song.
 
 ### HTTP Request
 
-`POST https://imuze.io/songs`
+`POST https://api.imuze.io/songs`
 
 ### Query Parameters
 
@@ -398,6 +403,7 @@ Parameter | Type
 text_seed | string
 musical_mode | 
 arrangement_id | 
+tags | array
 
 
 <aside class="notice">
@@ -412,7 +418,7 @@ Remember — Results may vary according to your authentication scope !
 
 
 ```shell
-curl "https://imuze.io/songs/:id"
+curl "https://api.imuze.io/songs/:id"
   -H "Content-Type: application/json"
   -H "Authorization: API_KEY_EXAMPLE"
   -X DELETE -d '{}'
@@ -442,7 +448,7 @@ api.songs.delete
 
 ```moonscript
 {
-    "id": 77478121
+    "id": 54585030
 }
 ```
 
@@ -450,7 +456,7 @@ This endpoint deletes a song.
 
 ### HTTP Request
 
-`DELETE https://imuze.io/songs/:id`
+`DELETE https://api.imuze.io/songs/:id`
 
 ### Query Parameters
 
@@ -471,63 +477,7 @@ Remember — Results may vary according to your authentication scope !
 
 
 ```shell
-curl "https://imuze.io/songs"
-  -H "Content-Type: application/json"
-  -H "Authorization: API_KEY_EXAMPLE"
-  -X GET -d '{}'
-```
-
-```json
-{}
-```
-
-```python
-import imuze
-
-api = imuze.authorize("API_KEY_EXAMPLE")
-api.songs.get()
-```
-
-```ruby
-require 'imuze'
-
-api = imuze::APIClient.authorize!('API_KEY_EXAMPLE')
-api.songs.get
-```
-
-
-
-> The above command returns JSON structured like this:
-
-```moonscript
-{}
-```
-
-This endpoint retrieves a list of songs.
-
-### HTTP Request
-
-`GET https://imuze.io/songs`
-
-### Query Parameters
-
-Parameter | Type
---------- | -----------
-
-
-<aside class="notice">
-Required properties are : 
-</aside>
-
-<aside class="success">
-Remember — Results may vary according to your authentication scope !
-</aside>
-## Show a song
-
-
-
-```shell
-curl "https://imuze.io/songs/:id"
+curl "https://api.imuze.io/songs"
   -H "Content-Type: application/json"
   -H "Authorization: API_KEY_EXAMPLE"
   -X GET -d '{}'
@@ -557,48 +507,80 @@ api.songs.get
 
 ```moonscript
 {
-    "mp3": "animi et",
-    "timeline": {
-        "amplitude": -30431350,
-        "lowest": -36298723,
-        "keys": [
-            {
-                "duration": 88555108,
-                "time": 69058662,
-                "value": -15524888
-            },
-            {
-                "duration": 61803217,
-                "time": 45689492,
-                "value": 55676878
-            },
-            {
-                "duration": 70290586,
-                "time": -78104195,
-                "value": 57653611,
-                "letter": "_"
-            },
-            {
-                "duration": 6116903,
-                "time": -58962146,
-                "value": 12982019,
-                "letter": "|"
-            },
-            {
-                "duration": -28238611,
-                "time": -68825000,
-                "value": 68947067
-            }
-        ]
-    }
+    "previous": 31621457,
+    "songs": [
+        {},
+        {
+            "name": "illum",
+            "id": 77713620
+        },
+        {}
+    ],
+    "count": 14898359
 }
+```
+
+This endpoint retrieves a list of songs.
+
+### HTTP Request
+
+`GET https://api.imuze.io/songs`
+
+### Query Parameters
+
+Parameter | Type
+--------- | -----------
+
+
+<aside class="notice">
+Required properties are : 
+</aside>
+
+<aside class="success">
+Remember — Results may vary according to your authentication scope !
+</aside>
+## Show a song
+
+
+
+```shell
+curl "https://api.imuze.io/songs/:id"
+  -H "Content-Type: application/json"
+  -H "Authorization: API_KEY_EXAMPLE"
+  -X GET -d '{}'
+```
+
+```json
+{}
+```
+
+```python
+import imuze
+
+api = imuze.authorize("API_KEY_EXAMPLE")
+api.songs.get()
+```
+
+```ruby
+require 'imuze'
+
+api = imuze::APIClient.authorize!('API_KEY_EXAMPLE')
+api.songs.get
+```
+
+
+
+> The above command returns JSON structured like this:
+
+```moonscript
+{}
 ```
 
 This endpoint shows a song.
 
 ### HTTP Request
 
-`GET https://imuze.io/songs/:id`
+`GET https://api.imuze.io/songs/:id`
 
 ### Query Parameters
 
@@ -621,7 +603,7 @@ Remember — Results may vary according to your authentication scope !
 
 
 ```shell
-curl "https://imuze.io/tags"
+curl "https://api.imuze.io/tags"
   -H "Content-Type: application/json"
   -H "Authorization: API_KEY_EXAMPLE"
   -X GET -d '{}'
@@ -657,7 +639,7 @@ This endpoint retrieves a list of tags.
 
 ### HTTP Request
 
-`GET https://imuze.io/tags`
+`GET https://api.imuze.io/tags`
 
 ### Query Parameters
 
@@ -679,21 +661,23 @@ Remember — Results may vary according to your authentication scope !
 
 
 ```shell
-curl "https://imuze.io/users"
+curl "https://api.imuze.io/users"
   -H "Content-Type: application/json"
   -H "Authorization: API_KEY_EXAMPLE"
   -X POST -d '{
-    "email": "numquam maiores",
-    "password": "fuga ea quo ut",
-    "birthdate": 77850985
+    "email": "alias quia similique qui quia",
+    "password": "delectus doloremque illo ex",
+    "birthdate": 79653608,
+    "name": "rem"
 }'
 ```
 
 ```json
 {
-    "email": "numquam maiores",
-    "password": "fuga ea quo ut",
-    "birthdate": 77850985
+    "email": "alias quia similique qui quia",
+    "password": "delectus doloremque illo ex",
+    "birthdate": 79653608,
+    "name": "rem"
 }
 ```
 
@@ -717,9 +701,9 @@ api.users.post
 
 ```moonscript
 {
-    "email": "minus reiciendis nihil veritatis",
-    "id": 34878621,
-    "token": "quia"
+    "email": "sint",
+    "id": 92215378,
+    "token": "veritatis quis"
 }
 ```
 
@@ -727,7 +711,7 @@ This endpoint creates an user.
 
 ### HTTP Request
 
-`POST https://imuze.io/users`
+`POST https://api.imuze.io/users`
 
 ### Query Parameters
 
@@ -751,18 +735,14 @@ Remember — Results may vary according to your authentication scope !
 
 
 ```shell
-curl "https://imuze.io/users/:id"
+curl "https://api.imuze.io/users/:id"
   -H "Content-Type: application/json"
   -H "Authorization: API_KEY_EXAMPLE"
-  -X DELETE -d '{
-    "id": 55745052
-}'
+  -X DELETE -d '{}'
 ```
 
 ```json
-{
-    "id": 55745052
-}
+{}
 ```
 
 ```python
@@ -785,7 +765,7 @@ api.users.delete
 
 ```moonscript
 {
-    "id": 40134545
+    "id": 65643539
 }
 ```
 
@@ -793,7 +773,7 @@ This endpoint deletes a user.
 
 ### HTTP Request
 
-`DELETE https://imuze.io/users/:id`
+`DELETE https://api.imuze.io/users/:id`
 
 ### Query Parameters
 
@@ -814,14 +794,24 @@ Remember — Results may vary according to your authentication scope !
 
 
 ```shell
-curl "https://imuze.io/users/:id"
+curl "https://api.imuze.io/users/:id"
   -H "Content-Type: application/json"
   -H "Authorization: API_KEY_EXAMPLE"
-  -X PUT -d '{}'
+  -X PUT -d '{
+    "name": "quis reiciendis quam illo",
+    "email": "sit odit",
+    "password": "necessitatibus",
+    "birthdate": -98044577
+}'
 ```
 
 ```json
-{}
+{
+    "name": "quis reiciendis quam illo",
+    "email": "sit odit",
+    "password": "necessitatibus",
+    "birthdate": -98044577
+}
 ```
 
 ```python
@@ -844,10 +834,10 @@ api.users.put
 
 ```moonscript
 {
-    "id": 80138105,
-    "email": "ut saepe eaque",
-    "name": "quas aliquid est vel vitae",
-    "birthdate": 29460086
+    "id": 96810989,
+    "email": "commodi quia doloribus amet praesentium",
+    "name": "accusamus ut nam eligendi dolor",
+    "birthdate": -40915481
 }
 ```
 
@@ -855,7 +845,7 @@ This endpoint updates a user.
 
 ### HTTP Request
 
-`PUT https://imuze.io/users/:id`
+`PUT https://api.imuze.io/users/:id`
 
 ### Query Parameters
 

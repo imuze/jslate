@@ -17,6 +17,12 @@
             }, {
                 "type": "null"
             }]
+        },
+        "tags": {
+            "type": "array",
+            "items":{
+                "type": "string"
+            }
         }
     },
     "required": ["text_seed", "musical_mode", "arrangement_id"]
