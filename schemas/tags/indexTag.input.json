@@ -1,9 +1,0 @@
-{
-        "title": "Index tags",
-        "description": "This endpoint retrieves a list of tags.",
-        "method": "GET",
-        "route": "/tags",
-        "type":"object",
-        "properties":{
-        }
-}

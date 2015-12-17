@@ -8,50 +8,22 @@
         "title": {
             "type": "string"
         },
-        "timeline": {
-            "id": "timeline",
-            "type": "object",
-            "properties": {
-                "amplitude": {
-                    "type": "integer"
-                },
-                "lowest": {
-                    "type": "integer"
-                },
-                "keys": {
-                    "type": "array",
-                    "items": {
-                        "type": "object",
-                        "properties": {
-                            "duration": {
-                                "type": "integer"
-                            },
-                            "time": {
-                                "type": "integer"
-                            },
-                            "value": {
-                                "type": "integer"
-                            },
-                            "letter": {
-                                "type": "string",
-                                "minLength": 1,
-                                "maxLength": 1
-                            }
-                        },
-                        "required": ["duration", "time", "value"]
-                    }
-                }
-            },
-            "required": ["amplitude", "lowest", "keys"]
+        "status": {
+            "enum": ["ready", "processing"]
         },
-        "mp3": {
-            "type": "string"
+        "mp3_url": {
+            "oneOf": [
+                {
+                    "type": "string"
         },
-        "tags": {
-            "type": "array",
-            "items":{
-                "type": "string"
-            }
+                {
+                    "type": "null"
         }
-    }
+            ]
+        },
+        "arrangement_name": {
+            "type": "string"
+        }
+    },
+    "required": ["id", "title", "status", "mp3_url", "arrangement_name"]
 }

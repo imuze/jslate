@@ -1,19 +1,19 @@
 {
-    "title": "Createa a song",
+    "title": "Create a song",
     "description": "This endpoint create a song.",
     "method": "POST",
     "route": "/songs",
     "type": "object",
     "properties": {
-        "text_seed": {
-            "type": "string"
-        },
-        "musical_mode": {
-            "enum": ["Ionian", "Dorian", "Phrygian", "Lydian", "Mixolydia", "Aeolian", "Locrian"]
+        "title": {
+            "type": "string",
+            "pattern": "^[a-zA-Z ]*$",
+            "minLength": 4
         },
         "arrangement_id": {
             "oneOf": [{
-                "type": "integer"
+                "type": "integer",
+                "minimum": 0
             }, {
                 "type": "null"
             }]
@@ -23,7 +23,11 @@
             "items":{
                 "type": "string"
             }
+        },
+        "desired_length": {
+            "type": "integer",
+            "minimum": 0
         }
     },
-    "required": ["text_seed", "musical_mode", "arrangement_id"]
+    "required": ["title", "arrangement_id", "tags", "desired_length"]
 }

@@ -1,21 +1,29 @@
 {
     "type": "object",
     "properties": {
-        "arrangements": {
+        "description": {
+            "type": "string"
+        },
+        "image_url": {
+            "oneOf": [
+                {
+                    "type": "string"
+        }, {
+                    "type": "null"
+        }
+            ]
+        },
+        "id": {
+            "type": "integer",
+            "minimum": 0
+        },
+        "genre_list": {
             "type": "array",
             "items": {
-                "type": "object",
-                "properties": {
-                    "id": {
-                        "type": "integer",
-                        "minimum": 0
-                    },
-                    "name": {
-                        "type": "string"
-                    }
-                }
+                "type": "string"
             }
         }
+
     },
-    "required": ["arrangements"]
+    "required": ["description", "image_url", "id",  "genre_list"]
 }

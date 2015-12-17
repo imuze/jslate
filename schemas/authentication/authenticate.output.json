@@ -2,11 +2,9 @@
     "id": "authenticateOutput",
     "type":"object",
     "properties":{
-        "token":{
+        "response":{
             "type": "string"
-        },
-        "user_id":{
-            "type": "integer"
         }
-    }
+    },
+    "required": ["response"]
 }

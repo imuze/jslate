@@ -1,16 +1,21 @@
 {
-    "title": "Authenticate",
+    "title": "Token",
     "description": "This endpoint permits a registered user to authenticate.",
-    "method": "PUT",
-    "route": "/authenticate",
+    "method": "POST",
+    "route": "/tokens",
     "type": "object",
     "properties": {
-        "email": {
-            "type": "string"
-        },
-        "password": {
-            "type": "string"
+        "token": {
+            "properties": {
+                "email": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                }
+            },
+            "required": ["email", "password"]
         }
     },
-    "required": ["email", "password"]
+    "required": ["token"]
 }
