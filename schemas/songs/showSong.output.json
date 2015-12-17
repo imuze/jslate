@@ -21,9 +21,12 @@
         }
             ]
         },
+        "timeline_url": {
+            "type": "string"
+        },
         "arrangement_name": {
             "type": "string"
         }
     },
-    "required": ["id", "title", "status", "mp3_url", "arrangement_name"]
+    "required": ["id", "title", "status", "mp3_url", "arrangement_name", "timeline_url"]
 }
