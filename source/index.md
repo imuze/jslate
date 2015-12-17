@@ -63,11 +63,15 @@ api.arrangements.get
 
 ```moonscript
 {
-    "count": 93988271,
+    "count": 3009025,
     "response": [
         {
-            "id": 32167519,
-            "name": "amet"
+            "id": 99064806,
+            "name": "dicta beatae"
+        },
+        {
+            "id": 94224493,
+            "name": "minima necessitatibus distinctio sint"
         }
     ]
 }
@@ -127,14 +131,12 @@ api.arrangements.get
 
 ```moonscript
 {
-    "description": "modi aut dolorem",
-    "image_url": "dolores quas libero",
-    "id": 33231671,
+    "description": "laudantium quis recusandae",
+    "image_url": null,
+    "id": 37342977,
     "genre_list": [
-        "voluptatem",
-        "velit fugit perferendis et",
-        "aperiam",
-        "iusto culpa"
+        "nesciunt explicabo et deleniti omnis",
+        "aperiam optio ullam"
     ]
 }
 ```
@@ -171,8 +173,8 @@ curl "https://api.imuze.io/tokens"
   -H "Authorization: API_KEY_EXAMPLE"
   -X POST -d '{
     "token": {
-        "email": "aut reiciendis a",
-        "password": "quibusdam deleniti consequuntur deserunt"
+        "email": "non ullam consectetur",
+        "password": "a sed vero"
     }
 }'
 ```
@@ -180,8 +182,8 @@ curl "https://api.imuze.io/tokens"
 ```json
 {
     "token": {
-        "email": "aut reiciendis a",
-        "password": "quibusdam deleniti consequuntur deserunt"
+        "email": "non ullam consectetur",
+        "password": "a sed vero"
     }
 }
 ```
@@ -206,7 +208,7 @@ api.authentication.post
 
 ```moonscript
 {
-    "response": "quos et officia"
+    "response": "in"
 }
 ```
 
@@ -241,25 +243,31 @@ curl "https://api.imuze.io/songs"
   -H "Content-Type: application/json"
   -H "Authorization: API_KEY_EXAMPLE"
   -X POST -d '{
-    "title": "zZUOuTSbSyhznfGrZGkdPlFGUOvWF fhPo clp",
-    "arrangement_id": null,
+    "title": "PxnrAQrJdIZshHKOxcHaLOmwuxJbJrMhuAuF oRWDudSnCPdlyPBlQei ArWYpZuV",
+    "arrangement_id": 14135045,
     "tags": [
-        "et",
-        "ad inventore illum dicta adipisci"
+        "reprehenderit eius",
+        "dicta sed",
+        "expedita natus in",
+        "nemo",
+        "sed"
     ],
-    "desired_length": 27667958
+    "desired_length": 19404922
 }'
 ```
 
 ```json
 {
-    "title": "zZUOuTSbSyhznfGrZGkdPlFGUOvWF fhPo clp",
-    "arrangement_id": null,
+    "title": "PxnrAQrJdIZshHKOxcHaLOmwuxJbJrMhuAuF oRWDudSnCPdlyPBlQei ArWYpZuV",
+    "arrangement_id": 14135045,
     "tags": [
-        "et",
-        "ad inventore illum dicta adipisci"
+        "reprehenderit eius",
+        "dicta sed",
+        "expedita natus in",
+        "nemo",
+        "sed"
     ],
-    "desired_length": 27667958
+    "desired_length": 19404922
 }
 ```
 
@@ -283,39 +291,12 @@ api.songs.post
 
 ```moonscript
 {
-    "text_seed": "eaque voluptas eveniet laboriosam asperiores",
-    "musical_mode": "Dorian",
-    "arrangement_id": 20004004,
-    "timeline": {
-        "amplitude": -83026235,
-        "lowest": 70046416,
-        "keys": [
-            {
-                "duration": -36748666,
-                "time": -32370751,
-                "value": -10827399
-            },
-            {
-                "duration": -36099690,
-                "time": -8751106,
-                "value": 71077323,
-                "letter": "et"
-            },
-            {
-                "duration": -33739887,
-                "time": -72103314,
-                "value": -58781449
-            },
-            {
-                "duration": -22048148,
-                "time": -65237477,
-                "value": -16537460
-            }
-        ]
-    },
-    "mp3": "saepe autem voluptatum",
-    "status_channel": "debitis",
-    "id": 10114447
+    "title": "fugiat mollitia",
+    "musical_mode": "Phrygian",
+    "arrangement_id": null,
+    "timeline_url": "nemo est ut quia consequatur",
+    "mp3": "omnis nostrum adipisci",
+    "status_channel": "quidem"
 }
 ```
 
@@ -377,14 +358,23 @@ api.songs.get
 
 ```moonscript
 {
-    "count": 52302869,
-    "response": {
-        "id": 20916658,
-        "title": "est",
-        "status": "ready",
-        "mp3_url": null,
-        "arrangement_name": "voluptas"
-    }
+    "count": 45771285,
+    "response": [
+        {
+            "id": 49965776,
+            "title": "adipisci et",
+            "status": "ready",
+            "mp3_url": "voluptas earum voluptatem consequatur",
+            "arrangement_name": "laboriosam atque cumque"
+        },
+        {
+            "id": 64010685,
+            "title": "quas",
+            "status": "processing",
+            "mp3_url": "ab",
+            "arrangement_name": "ut"
+        }
+    ]
 }
 ```
 
@@ -442,11 +432,11 @@ api.songs.get
 
 ```moonscript
 {
-    "id": 71308057,
-    "title": "ex et et sunt eaque",
-    "status": "ready",
-    "mp3_url": "qui quo repudiandae vitae temporibus",
-    "arrangement_name": "vel et suscipit non"
+    "id": 61641500,
+    "title": "ex quis voluptas nulla",
+    "status": "processing",
+    "mp3_url": null,
+    "arrangement_name": "consequatur repellendus non dolore voluptatem"
 }
 ```
 
