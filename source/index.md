@@ -13,8 +13,7 @@ language_tabs:
 
 
 toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
-  - <a href='http://github.com/tripit/slate'>Documentation Powered by Slate</a>
+  - <a href="mailto:developers@imuze.io?Subject=Request a Developer Key" target="_top">Request a Developer Key</a>
 
 includes:
   - errors
@@ -24,7 +23,7 @@ search: true
 
 # Introduction
 
-This is an alpha version of the iMuze API. The iMuze API lets you generate songs on demand. A song is based on a melody. A melody is unique. Melodies can be interpreted by any iMuze arrangements, classical, rock, hip-hop etc ... </br> You can access existing arrangements either by ids (after listing them) or by tags. You will need to register as a developer before using the API.</br> <h1>How To Use</h1> <ul><li>1. Authenticate : get your token</li><li>2. List the arrangements</li><li>3. Create a song with your parameters</li><li>4. Wait until the status is 'ready' on Show song.</li><li>5. Then get the mp3 url</li><li>6. Download the mp3</li><li>7. Listen and enjoy</li></ul> 
+This is an alpha version of the iMuze API. The iMuze API lets you generate songs on demand. A song is based on a melody. A melody is unique. Melodies can be interpreted by any iMuze arrangements, classical, rock, hip-hop etc ... </br> You can access existing arrangements either by ids (after listing them) or by tags. You will need to register as a developer before using the API.</br> <h1>Step By Step Instructions</h1> <ul><li>Authenticate : get your token</li><li>List the arrangements</li><li>Create a song with your parameters</li><li>Wait until the status is 'ready' on song#show</li><li>Then get the mp3 url</li><li>Download the mp3</li><li>Listen and enjoy</li></ul> 
 
 # Arrangements
 
@@ -33,7 +32,7 @@ This is an alpha version of the iMuze API. The iMuze API lets you generate songs
 
 
 ```shell
-curl "https://api.imuze.io/arrangements"
+curl "https://api.imuze.io/api/4/arrangements"
   -H "Content-Type: application/json"
   -H "Authorization: API_KEY_EXAMPLE"
   -X GET -d '{}'
@@ -63,27 +62,15 @@ api.arrangements.get
 
 ```moonscript
 {
-    "count": 65451733,
+    "count": 74444134,
     "response": [
         {
-            "id": 8044733,
-            "name": "harum nemo"
+            "id": 823127,
+            "name": "quos deserunt tenetur"
         },
         {
-            "id": 51759531,
-            "name": "nihil"
-        },
-        {
-            "id": 89791761,
-            "name": "quasi possimus veniam aliquam"
-        },
-        {
-            "id": 19394728,
-            "name": "aut dignissimos hic ut quaerat"
-        },
-        {
-            "id": 26716779,
-            "name": "quod molestiae"
+            "id": 33498342,
+            "name": "necessitatibus accusamus saepe veniam omnis"
         }
     ]
 }
@@ -93,7 +80,7 @@ This endpoint retrieves a list of arrangements.
 
 ### HTTP Request
 
-`GET https://api.imuze.io/arrangements`
+`GET https://api.imuze.io/api/4/arrangements`
 
 ### Query Parameters
 
@@ -113,14 +100,18 @@ Remember — Results may vary according to your authentication scope !
 
 
 ```shell
-curl "https://api.imuze.io/arrangements/:id"
+curl "https://api.imuze.io/api/4/arrangements/:id"
   -H "Content-Type: application/json"
   -H "Authorization: API_KEY_EXAMPLE"
-  -X GET -d '{}'
+  -X GET -d '{
+    "id": 78020492
+}'
 ```
 
 ```json
-{}
+{
+    "id": 78020492
+}
 ```
 
 ```python
@@ -143,13 +134,13 @@ api.arrangements.get
 
 ```moonscript
 {
-    "description": "enim",
+    "description": "omnis",
     "image_url": null,
-    "id": 82429755,
+    "id": 14171879,
     "genre_list": [
-        "neque in sed",
-        "reiciendis eos",
-        "aut quas necessitatibus qui"
+        "iste quidem est",
+        "ullam vitae quia",
+        "consequatur voluptatem similique"
     ]
 }
 ```
@@ -158,7 +149,7 @@ This endpoint shows an arrangement.
 
 ### HTTP Request
 
-`GET https://api.imuze.io/arrangements/:id`
+`GET https://api.imuze.io/api/4/arrangements/:id`
 
 ### Query Parameters
 
@@ -181,13 +172,13 @@ Remember — Results may vary according to your authentication scope !
 
 
 ```shell
-curl "https://api.imuze.io/tokens"
+curl "https://api.imuze.io/api/4/tokens"
   -H "Content-Type: application/json"
   -H "Authorization: API_KEY_EXAMPLE"
   -X POST -d '{
     "token": {
-        "email": "soluta animi ab vitae eius",
-        "password": "saepe et"
+        "email": "itaque esse",
+        "password": "ut sint sit aliquid"
     }
 }'
 ```
@@ -195,8 +186,8 @@ curl "https://api.imuze.io/tokens"
 ```json
 {
     "token": {
-        "email": "soluta animi ab vitae eius",
-        "password": "saepe et"
+        "email": "itaque esse",
+        "password": "ut sint sit aliquid"
     }
 }
 ```
@@ -221,7 +212,7 @@ api.authentication.post
 
 ```moonscript
 {
-    "response": "voluptate voluptatem"
+    "response": "et"
 }
 ```
 
@@ -229,7 +220,7 @@ This endpoint permits a registered user to authenticate.
 
 ### HTTP Request
 
-`POST https://api.imuze.io/tokens`
+`POST https://api.imuze.io/api/4/tokens`
 
 ### Query Parameters
 
@@ -252,27 +243,31 @@ Remember — Results may vary according to your authentication scope !
 
 
 ```shell
-curl "https://api.imuze.io/songs"
+curl "https://api.imuze.io/api/4/songs"
   -H "Content-Type: application/json"
   -H "Authorization: API_KEY_EXAMPLE"
   -X POST -d '{
-    "title": "kEhJuRKpBEMbTQkrKYsSFntkSHNXoKcJvJXFXDxNykdAHXjsVOlpVbimFdklJOVNgBSMVGnEWDTWRXMWEqRGadnMaTwRMMA",
-    "arrangement_id": null,
+    "title": "HQdHoqjcPXpSJiHSOogxrSJIxoCvWxIGrmab zQRWfkccwSQinqnqrnZYUdJmduYQW zbiqRnXBG",
+    "arrangement_id": 54430261,
     "tags": [
-        "veritatis tempora"
+        "voluptatem numquam sint",
+        "in id sed",
+        "veniam voluptatem architecto"
     ],
-    "desired_length": 7395018
+    "desired_length": 93304488
 }'
 ```
 
 ```json
 {
-    "title": "kEhJuRKpBEMbTQkrKYsSFntkSHNXoKcJvJXFXDxNykdAHXjsVOlpVbimFdklJOVNgBSMVGnEWDTWRXMWEqRGadnMaTwRMMA",
-    "arrangement_id": null,
+    "title": "HQdHoqjcPXpSJiHSOogxrSJIxoCvWxIGrmab zQRWfkccwSQinqnqrnZYUdJmduYQW zbiqRnXBG",
+    "arrangement_id": 54430261,
     "tags": [
-        "veritatis tempora"
+        "voluptatem numquam sint",
+        "in id sed",
+        "veniam voluptatem architecto"
     ],
-    "desired_length": 7395018
+    "desired_length": 93304488
 }
 ```
 
@@ -296,12 +291,13 @@ api.songs.post
 
 ```moonscript
 {
-    "title": "sed et temporibus",
+    "title": "dicta eum",
     "musical_mode": "Locrian",
-    "arrangement_id": null,
-    "timeline_url": "aliquam libero et ut",
-    "mp3": "molestiae ex eos incidunt",
-    "status_channel": "ut cum dolor qui"
+    "arrangement_id": 86293133,
+    "timeline_url": "ullam velit omnis",
+    "mp3": "accusantium aliquid",
+    "status_channel": "sunt quo",
+    "id": 9765394
 }
 ```
 
@@ -309,7 +305,7 @@ This endpoint create a song.
 
 ### HTTP Request
 
-`POST https://api.imuze.io/songs`
+`POST https://api.imuze.io/api/4/songs`
 
 ### Query Parameters
 
@@ -333,7 +329,7 @@ Remember — Results may vary according to your authentication scope !
 
 
 ```shell
-curl "https://api.imuze.io/songs"
+curl "https://api.imuze.io/api/4/songs"
   -H "Content-Type: application/json"
   -H "Authorization: API_KEY_EXAMPLE"
   -X GET -d '{}'
@@ -363,28 +359,21 @@ api.songs.get
 
 ```moonscript
 {
-    "count": 19658483,
+    "count": 58887924,
     "response": [
         {
-            "id": 56601198,
-            "title": "reiciendis sequi dolorem",
+            "id": 94262179,
+            "title": "voluptas non dignissimos",
             "status": "processing",
-            "mp3_url": null,
-            "arrangement_name": "atque"
+            "mp3_url": "id cupiditate molestias quo numquam",
+            "arrangement_name": "voluptas eum voluptatum"
         },
         {
-            "id": 76554110,
-            "title": "aliquam velit",
-            "status": "ready",
-            "mp3_url": null,
-            "arrangement_name": "totam consectetur eos et illo"
-        },
-        {
-            "id": 68402850,
-            "title": "at",
+            "id": 65386972,
+            "title": "facilis non est consectetur in",
             "status": "processing",
-            "mp3_url": null,
-            "arrangement_name": "ratione dignissimos animi"
+            "mp3_url": "sunt quibusdam vitae aliquam qui",
+            "arrangement_name": "qui"
         }
     ]
 }
@@ -394,7 +383,7 @@ This endpoint retrieves a list of songs.
 
 ### HTTP Request
 
-`GET https://api.imuze.io/songs`
+`GET https://api.imuze.io/api/4/songs`
 
 ### Query Parameters
 
@@ -414,7 +403,7 @@ Remember — Results may vary according to your authentication scope !
 
 
 ```shell
-curl "https://api.imuze.io/songs/:id"
+curl "https://api.imuze.io/api/4/songs/:id"
   -H "Content-Type: application/json"
   -H "Authorization: API_KEY_EXAMPLE"
   -X GET -d '{}'
@@ -444,12 +433,12 @@ api.songs.get
 
 ```moonscript
 {
-    "id": 61122506,
-    "title": "est tempora et",
+    "id": 6866063,
+    "title": "nisi illo et",
     "status": "processing",
-    "mp3_url": null,
-    "arrangement_name": "veniam architecto fugit quia",
-    "timeline_url": "nobis"
+    "mp3_url": "sequi",
+    "arrangement_name": "laboriosam fuga aut dolores non",
+    "timeline_url": "soluta"
 }
 ```
 
@@ -457,7 +446,7 @@ This endpoint shows a song.
 
 ### HTTP Request
 
-`GET https://api.imuze.io/songs/:id`
+`GET https://api.imuze.io/api/4/songs/:id`
 
 ### Query Parameters
 
