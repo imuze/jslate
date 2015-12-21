@@ -35,7 +35,6 @@ This is an alpha version of the iMuze API. The iMuze API lets you generate songs
 curl "https://api.imuze.io/api/4/arrangements"\
   -H "Content-Type: application/json"\
   -H "Authorization: Token API_KEY_EXAMPLE"\
-
 ```
 
 ```json
@@ -62,23 +61,15 @@ api.arrangements.get
 
 ```moonscript
 {
-    "count": 65254191,
+    "count": 63597252,
     "response": [
         {
-            "id": 69532568,
-            "name": "distinctio autem deserunt commodi"
+            "id": 99557642,
+            "name": "similique atque in"
         },
         {
-            "id": 45782199,
-            "name": "consequatur in quis omnis ea"
-        },
-        {
-            "id": 17921329,
-            "name": "quia"
-        },
-        {
-            "id": 19101081,
-            "name": "facilis libero exercitationem"
+            "id": 71855931,
+            "name": "aut eveniet ex"
         }
     ]
 }
@@ -116,7 +107,6 @@ Remember — Results may vary according to your authentication scope !
 curl "https://api.imuze.io/api/4/arrangements/:id"\
   -H "Content-Type: application/json"\
   -H "Authorization: Token API_KEY_EXAMPLE"\
-
 ```
 
 ```json
@@ -143,12 +133,15 @@ api.arrangements.get
 
 ```moonscript
 {
-    "description": "quia ipsa laudantium atque praesentium",
-    "image_url": null,
-    "id": 92277794,
+    "description": "est amet enim et et",
+    "image_url": "quia",
+    "id": 63139034,
     "genre_list": [
-        "nulla adipisci libero tenetur",
-        "sed"
+        "quia",
+        "quia repellendus",
+        "aut",
+        "voluptatem ea sapiente soluta et",
+        "et"
     ]
 }
 ```
@@ -187,15 +180,14 @@ Remember — Results may vary according to your authentication scope !
 ```shell
 curl "https://api.imuze.io/api/4/tokens"\
   -H "Content-Type: application/json"\
-
-  -X POST -d '{"token":{"email":"omnis et consectetur","password":"dicta"}}'
+  -X POST -d '{"token":{"email":"corporis","password":"ea quos earum quis quidem"}}'
 ```
 
 ```json
 {
     "token": {
-        "email": "omnis et consectetur",
-        "password": "dicta"
+        "email": "corporis",
+        "password": "ea quos earum quis quidem"
     }
 }
 ```
@@ -220,7 +212,7 @@ api.authentication.post
 
 ```moonscript
 {
-    "response": "vitae et pariatur"
+    "response": "ex exercitationem"
 }
 ```
 
@@ -251,18 +243,20 @@ Required properties are : token
 curl "https://api.imuze.io/api/4/songs"\
   -H "Content-Type: application/json"\
   -H "Authorization: Token API_KEY_EXAMPLE"\
-  -X POST -d '{"title":"rbKrMWawjCpfNOOiZFFdIk","arrangement_id":87474901,"tags":["voluptatem eos","harum ut officia exercitationem"],"desired_length":6547829}'
+  -X POST -d '{"title":"AcrMrJBubHRiwr CXjOAfUeBaQgoKHdMrLcYrVxTePNpWsuCuiwThBoymLHKmpDQqyFun","arrangement_id":null,"tags":["consequatur eos cumque molestiae","natus praesentium ut nostrum est","sunt et quo","veritatis illum"],"desired_length":47078055}'
 ```
 
 ```json
 {
-    "title": "rbKrMWawjCpfNOOiZFFdIk",
-    "arrangement_id": 87474901,
+    "title": "AcrMrJBubHRiwr CXjOAfUeBaQgoKHdMrLcYrVxTePNpWsuCuiwThBoymLHKmpDQqyFun",
+    "arrangement_id": null,
     "tags": [
-        "voluptatem eos",
-        "harum ut officia exercitationem"
+        "consequatur eos cumque molestiae",
+        "natus praesentium ut nostrum est",
+        "sunt et quo",
+        "veritatis illum"
     ],
-    "desired_length": 6547829
+    "desired_length": 47078055
 }
 ```
 
@@ -286,12 +280,12 @@ api.songs.post
 
 ```moonscript
 {
-    "title": "aut",
-    "musical_mode": "Mixolydia",
-    "arrangement_id": 41640531,
-    "timeline_url": "sed",
-    "mp3": "consequatur nisi aut mollitia explicabo",
-    "status_channel": "est officia cumque maxime voluptate"
+    "title": "culpa sint ex vitae occaecati",
+    "musical_mode": "Ionian",
+    "arrangement_id": 24871639,
+    "timeline_url": "non inventore sed",
+    "mp3": "illo similique doloribus",
+    "status_channel": "eligendi"
 }
 ```
 
@@ -331,7 +325,6 @@ Remember — Results may vary according to your authentication scope !
 curl "https://api.imuze.io/api/4/songs"\
   -H "Content-Type: application/json"\
   -H "Authorization: Token API_KEY_EXAMPLE"\
-
 ```
 
 ```json
@@ -358,35 +351,35 @@ api.songs.get
 
 ```moonscript
 {
-    "count": 93026263,
+    "count": 34513667,
     "response": [
         {
-            "id": 90195378,
-            "title": "mollitia",
+            "id": 25922410,
+            "title": "et at et amet",
             "status": "processing",
             "mp3_url": null,
-            "arrangement_name": "fuga sint corporis ullam"
+            "arrangement_name": "quidem distinctio est"
         },
         {
-            "id": 147943,
-            "title": "tenetur eaque ad",
+            "id": 85111158,
+            "title": "quia eligendi",
             "status": "ready",
             "mp3_url": null,
-            "arrangement_name": "quia in voluptate possimus"
+            "arrangement_name": "maiores aut impedit adipisci"
         },
         {
-            "id": 47016215,
-            "title": "optio",
-            "status": "ready",
+            "id": 42042199,
+            "title": "sint inventore",
+            "status": "processing",
             "mp3_url": null,
-            "arrangement_name": "quo perferendis tempora et"
+            "arrangement_name": "explicabo sed aut vel ut"
         },
         {
-            "id": 18052930,
-            "title": "dolor corrupti autem",
-            "status": "ready",
+            "id": 72333900,
+            "title": "amet doloribus delectus fugit ea",
+            "status": "processing",
             "mp3_url": null,
-            "arrangement_name": "nihil sit qui voluptas nisi"
+            "arrangement_name": "magni reiciendis maxime"
         }
     ]
 }
@@ -424,12 +417,11 @@ Remember — Results may vary according to your authentication scope !
 curl "https://api.imuze.io/api/4/songs/:id"\
   -H "Content-Type: application/json"\
   -H "Authorization: Token API_KEY_EXAMPLE"\
-
 ```
 
 ```json
 {
-    "id": 22195342
+    "id": 96065749
 }
 ```
 
@@ -453,12 +445,12 @@ api.songs.get
 
 ```moonscript
 {
-    "id": 37295388,
-    "title": "sint sed nihil sapiente",
+    "id": 82796670,
+    "title": "fugit eius similique",
     "status": "ready",
-    "mp3_url": "enim",
-    "arrangement_name": "ipsam praesentium cupiditate aliquid",
-    "timeline_url": "quam ea"
+    "mp3_url": null,
+    "arrangement_name": "consectetur accusantium unde",
+    "timeline_url": "maxime dolor ea"
 }
 ```
 
