@@ -12,6 +12,7 @@ var domain;
 var languages;
 var package_name;
 var intro_text;
+var api_key;
 var indexDotMd = '';
 
 function init() {
@@ -24,10 +25,14 @@ function init() {
     languages = config.languages;
     package_name = config.package_name;
     intro_text = config.intro_text;
+    api_key = config.api_key;
     indexDotMd = '';
     jsrender.helpers({
         displayJSON: function (json) {
             return JSON.stringify(json, null, 4);
+        },
+        displayJSONcurl: function (json) {
+            return JSON.stringify(json, null, 0);
         }
     });
     languages.forEach(function (language) {
@@ -133,7 +138,7 @@ function generate_markdown(module_name, input_schema, input_example, output_exam
             output_example: output_example,
             package_name: package_name,
             ressource: module_name,
-            api_key: "API_KEY_EXAMPLE",
+            api_key: api_key,
             domain: domain,
             route: input_schema.route,
             method: input_schema.method || "GET"

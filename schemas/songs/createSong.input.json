@@ -3,10 +3,12 @@
     "description": "This endpoint create a song.",
     "method": "POST",
     "route": "/songs",
+    "auth": true,
     "type": "object",
     "properties": {
         "title": {
             "type": "string",
+            "description": "The title is the musical seed of your song.",
             "pattern": "^[a-zA-Z ]*$",
             "minLength": 4
         },
@@ -26,6 +28,7 @@
         },
         "desired_length": {
             "type": "integer",
+            "description": "The desired duration of your song in senconds.",
             "minimum": 0
         }
     },

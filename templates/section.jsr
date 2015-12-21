@@ -20,9 +20,9 @@
 
 ### Query Parameters
 
-Parameter | Type
---------- | -----------
-{{props schema.properties }}{{>key}} | {{>prop.type}}
+Parameter | Type | Description
+--------- | ----------- | -----------
+{{props schema.properties }}{{>key}} | {{>prop.type}} | {{>prop.description}} 
 {{/props}}
 
 <aside class="notice">

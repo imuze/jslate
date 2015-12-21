@@ -3,6 +3,7 @@
         "description": "This endpoint retrieves a list of songs.",
         "method": "GET",
         "route": "/songs",
+        "auth": true,
         "type":"object",
         "properties":{
         }

@@ -3,10 +3,12 @@
     "description": "This endpoint shows an arrangement.",
     "method": "GET",
     "route": "/arrangements/:id",
+    "auth": true,
     "type": "object",
     "properties": {
         "id": {
             "type": "integer",
+            "description": "The id of the arrangement.",
             "minimum": 0
         }
     }

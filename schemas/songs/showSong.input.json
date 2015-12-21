@@ -3,10 +3,12 @@
     "description": "This endpoint shows a song.",
     "method": "GET",
     "route": "/songs/:id",
+    "auth": true,
     "type": "object",
     "properties": {
         "id": {
             "type": "integer",
+            "description": "The id of the song.",
             "minimum": 0
         }
     }

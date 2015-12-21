@@ -3,15 +3,18 @@
     "description": "This endpoint permits a registered user to authenticate.",
     "method": "POST",
     "route": "/tokens",
+    "auth": false,
     "type": "object",
     "properties": {
         "token": {
             "properties": {
                 "email": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The user's email."
                 },
                 "password": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The user's password."
                 }
             },
             "required": ["email", "password"]
