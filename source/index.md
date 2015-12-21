@@ -35,7 +35,7 @@ This is an alpha version of the iMuze API. The iMuze API lets you generate songs
 curl "https://api.imuze.io/api/4/arrangements"\
   -H "Content-Type: application/json"\
   -H "Authorization: Token API_KEY_EXAMPLE"\
-  -X GET -d '{}'
+
 ```
 
 ```json
@@ -62,23 +62,23 @@ api.arrangements.get
 
 ```moonscript
 {
-    "count": 70533796,
+    "count": 65254191,
     "response": [
         {
-            "id": 62169186,
-            "name": "iusto vitae ullam necessitatibus quae"
+            "id": 69532568,
+            "name": "distinctio autem deserunt commodi"
         },
         {
-            "id": 13768868,
-            "name": "expedita perspiciatis cum"
+            "id": 45782199,
+            "name": "consequatur in quis omnis ea"
         },
         {
-            "id": 76468977,
-            "name": "sequi in suscipit ut"
+            "id": 17921329,
+            "name": "quia"
         },
         {
-            "id": 9202688,
-            "name": "sunt dignissimos"
+            "id": 19101081,
+            "name": "facilis libero exercitationem"
         }
     ]
 }
@@ -100,6 +100,11 @@ Parameter | Type | Description
 Required properties are : 
 </aside>
 
+
+<aside class="success">
+An authentication token is required for this route.
+</aside>
+
 <aside class="success">
 Remember — Results may vary according to your authentication scope !
 </aside>
@@ -111,7 +116,7 @@ Remember — Results may vary according to your authentication scope !
 curl "https://api.imuze.io/api/4/arrangements/:id"\
   -H "Content-Type: application/json"\
   -H "Authorization: Token API_KEY_EXAMPLE"\
-  -X GET -d '{}'
+
 ```
 
 ```json
@@ -138,14 +143,12 @@ api.arrangements.get
 
 ```moonscript
 {
-    "description": "aut sunt",
+    "description": "quia ipsa laudantium atque praesentium",
     "image_url": null,
-    "id": 80412349,
+    "id": 92277794,
     "genre_list": [
-        "asperiores ut",
-        "qui sed minus illum rerum",
-        "consequatur provident dolorem ut velit",
-        "ut assumenda"
+        "nulla adipisci libero tenetur",
+        "sed"
     ]
 }
 ```
@@ -167,6 +170,11 @@ id | integer | The id of the arrangement.
 Required properties are : 
 </aside>
 
+
+<aside class="success">
+An authentication token is required for this route.
+</aside>
+
 <aside class="success">
 Remember — Results may vary according to your authentication scope !
 </aside>
@@ -179,15 +187,15 @@ Remember — Results may vary according to your authentication scope !
 ```shell
 curl "https://api.imuze.io/api/4/tokens"\
   -H "Content-Type: application/json"\
-  -H "Authorization: Token API_KEY_EXAMPLE"\
-  -X POST -d '{"token":{"email":"maxime ab non et commodi","password":"ea voluptatem vero odit"}}'
+
+  -X POST -d '{"token":{"email":"omnis et consectetur","password":"dicta"}}'
 ```
 
 ```json
 {
     "token": {
-        "email": "maxime ab non et commodi",
-        "password": "ea voluptatem vero odit"
+        "email": "omnis et consectetur",
+        "password": "dicta"
     }
 }
 ```
@@ -212,7 +220,7 @@ api.authentication.post
 
 ```moonscript
 {
-    "response": "quia"
+    "response": "vitae et pariatur"
 }
 ```
 
@@ -233,9 +241,6 @@ token |  |
 Required properties are : token
 </aside>
 
-<aside class="success">
-Remember — Results may vary according to your authentication scope !
-</aside>
 # Songs
 
 ## Create a song
@@ -246,19 +251,18 @@ Remember — Results may vary according to your authentication scope !
 curl "https://api.imuze.io/api/4/songs"\
   -H "Content-Type: application/json"\
   -H "Authorization: Token API_KEY_EXAMPLE"\
-  -X POST -d '{"title":"tqvDjXdleqcLftHrqYirdVBfXAdxrtLGryBNSQdRapTwOtcuGCZlDzEdGdSNSIIxA","arrangement_id":null,"tags":["illum","qui earum dolorem","et inventore soluta modi"],"desired_length":98547212}'
+  -X POST -d '{"title":"rbKrMWawjCpfNOOiZFFdIk","arrangement_id":87474901,"tags":["voluptatem eos","harum ut officia exercitationem"],"desired_length":6547829}'
 ```
 
 ```json
 {
-    "title": "tqvDjXdleqcLftHrqYirdVBfXAdxrtLGryBNSQdRapTwOtcuGCZlDzEdGdSNSIIxA",
-    "arrangement_id": null,
+    "title": "rbKrMWawjCpfNOOiZFFdIk",
+    "arrangement_id": 87474901,
     "tags": [
-        "illum",
-        "qui earum dolorem",
-        "et inventore soluta modi"
+        "voluptatem eos",
+        "harum ut officia exercitationem"
     ],
-    "desired_length": 98547212
+    "desired_length": 6547829
 }
 ```
 
@@ -282,12 +286,12 @@ api.songs.post
 
 ```moonscript
 {
-    "title": "voluptas ex rerum assumenda",
+    "title": "aut",
     "musical_mode": "Mixolydia",
-    "arrangement_id": 54224573,
-    "timeline_url": "dicta aut rerum",
-    "mp3": "repellendus a non voluptatem minus",
-    "status_channel": "expedita"
+    "arrangement_id": 41640531,
+    "timeline_url": "sed",
+    "mp3": "consequatur nisi aut mollitia explicabo",
+    "status_channel": "est officia cumque maxime voluptate"
 }
 ```
 
@@ -311,6 +315,11 @@ desired_length | integer | The desired duration of your song in senconds.
 Required properties are : title,arrangement_id,tags,desired_length
 </aside>
 
+
+<aside class="success">
+An authentication token is required for this route.
+</aside>
+
 <aside class="success">
 Remember — Results may vary according to your authentication scope !
 </aside>
@@ -322,7 +331,7 @@ Remember — Results may vary according to your authentication scope !
 curl "https://api.imuze.io/api/4/songs"\
   -H "Content-Type: application/json"\
   -H "Authorization: Token API_KEY_EXAMPLE"\
-  -X GET -d '{}'
+
 ```
 
 ```json
@@ -349,21 +358,35 @@ api.songs.get
 
 ```moonscript
 {
-    "count": 15029696,
+    "count": 93026263,
     "response": [
         {
-            "id": 12330239,
-            "title": "velit et",
+            "id": 90195378,
+            "title": "mollitia",
             "status": "processing",
-            "mp3_url": "dicta non nihil totam",
-            "arrangement_name": "praesentium"
+            "mp3_url": null,
+            "arrangement_name": "fuga sint corporis ullam"
         },
         {
-            "id": 9000991,
-            "title": "alias facilis quam",
+            "id": 147943,
+            "title": "tenetur eaque ad",
             "status": "ready",
-            "mp3_url": "dolores",
-            "arrangement_name": "sed id"
+            "mp3_url": null,
+            "arrangement_name": "quia in voluptate possimus"
+        },
+        {
+            "id": 47016215,
+            "title": "optio",
+            "status": "ready",
+            "mp3_url": null,
+            "arrangement_name": "quo perferendis tempora et"
+        },
+        {
+            "id": 18052930,
+            "title": "dolor corrupti autem",
+            "status": "ready",
+            "mp3_url": null,
+            "arrangement_name": "nihil sit qui voluptas nisi"
         }
     ]
 }
@@ -385,6 +408,11 @@ Parameter | Type | Description
 Required properties are : 
 </aside>
 
+
+<aside class="success">
+An authentication token is required for this route.
+</aside>
+
 <aside class="success">
 Remember — Results may vary according to your authentication scope !
 </aside>
@@ -396,11 +424,13 @@ Remember — Results may vary according to your authentication scope !
 curl "https://api.imuze.io/api/4/songs/:id"\
   -H "Content-Type: application/json"\
   -H "Authorization: Token API_KEY_EXAMPLE"\
-  -X GET -d '{}'
+
 ```
 
 ```json
-{}
+{
+    "id": 22195342
+}
 ```
 
 ```python
@@ -423,12 +453,12 @@ api.songs.get
 
 ```moonscript
 {
-    "id": 62105905,
-    "title": "natus modi quam alias magnam",
+    "id": 37295388,
+    "title": "sint sed nihil sapiente",
     "status": "ready",
-    "mp3_url": "voluptas occaecati autem",
-    "arrangement_name": "fugiat",
-    "timeline_url": "dignissimos exercitationem"
+    "mp3_url": "enim",
+    "arrangement_name": "ipsam praesentium cupiditate aliquid",
+    "timeline_url": "quam ea"
 }
 ```
 
@@ -447,6 +477,11 @@ id | integer | The id of the song.
 
 <aside class="notice">
 Required properties are : 
+</aside>
+
+
+<aside class="success">
+An authentication token is required for this route.
 </aside>
 
 <aside class="success">

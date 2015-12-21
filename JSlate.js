@@ -141,7 +141,8 @@ function generate_markdown(module_name, input_schema, input_example, output_exam
             api_key: api_key,
             domain: domain,
             route: input_schema.route,
-            method: input_schema.method || "GET"
+            method: input_schema.method || "GET",
+            auth: input_schema.auth
         }
     })
 

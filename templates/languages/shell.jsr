@@ -1,6 +1,6 @@
 ```shell
 curl "{{>domain}}{{>route}}"\
   -H "Content-Type: application/json"\
-  -H "Authorization: {{>api_key}}"\
-  -X {{>method}} -d '{{:~displayJSONcurl(input_example)}}'
+{{if auth}}  -H "Authorization: {{>api_key}}"\{{/if}}
+{{if method != "GET"}}  -X {{>method}} -d '{{:~displayJSONcurl(input_example)}}'{{/if}}
 ```

@@ -29,6 +29,12 @@ Parameter | Type | Description
 Required properties are : {{:schema.required}}
 </aside>
 
+{{if schema.auth}}
+<aside class="success">
+An authentication token is required for this route.
+</aside>
+
 <aside class="success">
 Remember — Results may vary according to your authentication scope !
 </aside>
+{{/if}}
