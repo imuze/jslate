@@ -1,7 +1,7 @@
 {
-    "domain": "https://api.imuze.io/api/4",
-    "languages": ["shell", "json", "python", "ruby"],
+    "domain": "http://joplin.imuze.io",
+    "languages": ["shell", "json"],
     "package_name": "imuze",
-    "api_key": "Token API_KEY_EXAMPLE",
-    "intro_text": "This is an alpha version of the iMuze API. The iMuze API lets you generate songs on demand. A song is based on a melody. A melody is unique. Melodies can be interpreted by any iMuze arrangements, classical, rock, hip-hop etc ... </br> You can access existing arrangements either by ids (after listing them) or by tags. You will need to register as a developer before using the API.</br> <h1>Step By Step Instructions</h1> <ul><li>Authenticate : get your token</li><li>List the arrangements</li><li>Create a song with your parameters, using one of the arrangement from the list above</li><li>Wait until the status is 'ready' on song#show</li><li>Then get the mp3 url</li><li>Download the mp3</li><li>Listen and enjoy</li></ul> "
+    "api_key": "API_KEY_EXAMPLE",
+    "intro_text": "iMuze is a music generation API. With the iMuze API, you can generate thousand of musics in seconds.</br> <h1>How-to</h1> <ul><li>Register: contact us to get a developer account.</li><li>Authenticate: use your credentials to get a JWT token.</li><li>List musical genres.</li><li>Generate music: pick a genre, a duration and a structure to genereate a music.</li><li>Get the mp3 and enjoy.</li></ul>"
 }

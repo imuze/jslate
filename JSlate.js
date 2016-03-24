@@ -2,6 +2,8 @@
  * Created by Geoffroy on 10/4/2015.
  */
 var jsf = require('json-schema-faker');
+var mkdirp = require("mkdirp");
+var getDirName = require("path").dirname;
 var dir = require('node-dir');
 var fs = require('fs');
 var jsrender = require('node-jsrender');
@@ -78,7 +80,7 @@ function generate_modules() {
     self.generate = function (dir) {
         self.result += generate_module(dir);
     };
-    dirList(__dirname + "/schemas").forEach(generate);
+    dirList(__dirname + "/../json-schemas").forEach(generate);
 
 
 
@@ -160,7 +162,7 @@ function generate_markdown(module_name, input_schema, input_example, output_exam
 function generate_example(exampleFileName, schema) {
     var res = new jsf(schema);
     console.log("creating" + exampleFileName);
-    fs.writeFile(exampleFileName, JSON.stringify(res, null, 4), 'utf-8', function (err) {
+    writeFile(exampleFileName, JSON.stringify(res, null, 4), 'utf-8', function (err) {
         if (err) {
             return console.log(err);
         }
@@ -179,6 +181,13 @@ function output_path(input_schema_path) {
 
 function file2json(file_name) {
     return JSON.parse(fs.readFileSync(file_name).toString());
+}
+
+function writeFile (path, contents, cb) {
+  mkdirp(getDirName(path), function (err) {
+    if (err) return cb(err)
+    fs.writeFile(path, contents, cb)
+  })
 }
 
 jslate();

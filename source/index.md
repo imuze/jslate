@@ -7,10 +7,6 @@ language_tabs:
 
   - json
 
-  - python
-
-  - ruby
-
 
 toc_footers:
   - <a href="mailto:developers@imuze.io?Subject=Request a Developer Key" target="_top">Request a Developer Key</a>
@@ -23,154 +19,8 @@ search: true
 
 # Introduction
 
-This is an alpha version of the iMuze API. The iMuze API lets you generate songs on demand. A song is based on a melody. A melody is unique. Melodies can be interpreted by any iMuze arrangements, classical, rock, hip-hop etc ... </br> You can access existing arrangements either by ids (after listing them) or by tags. You will need to register as a developer before using the API.</br> <h1>Step By Step Instructions</h1> <ul><li>Authenticate : get your token</li><li>List the arrangements</li><li>Create a song with your parameters, using one of the arrangement from the list above</li><li>Wait until the status is 'ready' on song#show</li><li>Then get the mp3 url</li><li>Download the mp3</li><li>Listen and enjoy</li></ul> 
+iMuze is a music generation API. With the iMuze API, you can generate thousand of musics in seconds.</br> <h1>How-to</h1> <ul><li>Register: contact us to get a developer account.</li><li>Authenticate: use your credentials to get a JWT token.</li><li>List musical genres.</li><li>Generate music: pick a genre, a duration and a structure to genereate a music.</li><li>Get the mp3 and enjoy.</li></ul>
 
-# Arrangements
-
-## Index arrangements
-
-
-
-```shell
-curl "https://api.imuze.io/api/4/arrangements"\
-  -H "Content-Type: application/json"\
-  -H "Authorization: Token API_KEY_EXAMPLE"\
-```
-
-```json
-{}
-```
-
-```python
-import imuze
-
-api = imuze.authorize("Token API_KEY_EXAMPLE")
-api.arrangements.get()
-```
-
-```ruby
-require 'imuze'
-
-api = imuze::APIClient.authorize!('Token API_KEY_EXAMPLE')
-api.arrangements.get
-```
-
-
-
-> The above command returns JSON structured like this:
-
-```moonscript
-{
-    "count": 63597252,
-    "response": [
-        {
-            "id": 99557642,
-            "name": "similique atque in"
-        },
-        {
-            "id": 71855931,
-            "name": "aut eveniet ex"
-        }
-    ]
-}
-```
-
-This endpoint retrieves a list of arrangements.
-
-### HTTP Request
-
-`GET https://api.imuze.io/api/4/arrangements`
-
-### Query Parameters
-
-Parameter | Type | Description
---------- | ----------- | -----------
-
-
-<aside class="notice">
-Required properties are : 
-</aside>
-
-
-<aside class="success">
-An authentication token is required for this route.
-</aside>
-
-<aside class="success">
-Remember — Results may vary according to your authentication scope !
-</aside>
-## Show an arrangement
-
-
-
-```shell
-curl "https://api.imuze.io/api/4/arrangements/:id"\
-  -H "Content-Type: application/json"\
-  -H "Authorization: Token API_KEY_EXAMPLE"\
-```
-
-```json
-{}
-```
-
-```python
-import imuze
-
-api = imuze.authorize("Token API_KEY_EXAMPLE")
-api.arrangements.get()
-```
-
-```ruby
-require 'imuze'
-
-api = imuze::APIClient.authorize!('Token API_KEY_EXAMPLE')
-api.arrangements.get
-```
-
-
-
-> The above command returns JSON structured like this:
-
-```moonscript
-{
-    "description": "est amet enim et et",
-    "image_url": "quia",
-    "id": 63139034,
-    "genre_list": [
-        "quia",
-        "quia repellendus",
-        "aut",
-        "voluptatem ea sapiente soluta et",
-        "et"
-    ]
-}
-```
-
-This endpoint shows an arrangement.
-
-### HTTP Request
-
-`GET https://api.imuze.io/api/4/arrangements/:id`
-
-### Query Parameters
-
-Parameter | Type | Description
---------- | ----------- | -----------
-id | integer | The id of the arrangement.
-
-
-<aside class="notice">
-Required properties are : 
-</aside>
-
-
-<aside class="success">
-An authentication token is required for this route.
-</aside>
-
-<aside class="success">
-Remember — Results may vary according to your authentication scope !
-</aside>
 # Authentication
 
 ## Token
@@ -178,32 +28,16 @@ Remember — Results may vary according to your authentication scope !
 
 
 ```shell
-curl "https://api.imuze.io/api/4/tokens"\
+curl "http://joplin.imuze.io/accounts/token"\
   -H "Content-Type: application/json"\
-  -X POST -d '{"token":{"email":"corporis","password":"ea quos earum quis quidem"}}'
+  -X PUT -d '{"email":"veniam Excepteur ","password":"aute qui dolor"}'
 ```
 
 ```json
 {
-    "token": {
-        "email": "corporis",
-        "password": "ea quos earum quis quidem"
-    }
+    "email": "veniam Excepteur ",
+    "password": "aute qui dolor"
 }
-```
-
-```python
-import imuze
-
-api = imuze.authorize("Token API_KEY_EXAMPLE")
-api.authentication.post()
-```
-
-```ruby
-require 'imuze'
-
-api = imuze::APIClient.authorize!('Token API_KEY_EXAMPLE')
-api.authentication.post
 ```
 
 
@@ -212,66 +46,48 @@ api.authentication.post
 
 ```moonscript
 {
-    "response": "ex exercitationem"
+    "token": "ea"
 }
 ```
 
-This endpoint permits a registered user to authenticate.
+Endpoint to create a token from credentials.
 
 ### HTTP Request
 
-`POST https://api.imuze.io/api/4/tokens`
+`PUT http://joplin.imuze.io/accounts/token`
 
 ### Query Parameters
 
 Parameter | Type | Description
 --------- | ----------- | -----------
-token |  | 
+email | string | User email.
+password | string | User password.
 
 
 <aside class="notice">
-Required properties are : token
+Required properties are : email,password
 </aside>
 
-# Songs
+# Genres
 
-## Create a song
+## List genres
 
 
 
 ```shell
-curl "https://api.imuze.io/api/4/songs"\
+curl "http://joplin.imuze.io/genres/"\
   -H "Content-Type: application/json"\
-  -H "Authorization: Token API_KEY_EXAMPLE"\
-  -X POST -d '{"title":"AcrMrJBubHRiwr CXjOAfUeBaQgoKHdMrLcYrVxTePNpWsuCuiwThBoymLHKmpDQqyFun","arrangement_id":null,"tags":["consequatur eos cumque molestiae","natus praesentium ut nostrum est","sunt et quo","veritatis illum"],"desired_length":47078055}'
 ```
 
 ```json
 {
-    "title": "AcrMrJBubHRiwr CXjOAfUeBaQgoKHdMrLcYrVxTePNpWsuCuiwThBoymLHKmpDQqyFun",
-    "arrangement_id": null,
-    "tags": [
-        "consequatur eos cumque molestiae",
-        "natus praesentium ut nostrum est",
-        "sunt et quo",
-        "veritatis illum"
-    ],
-    "desired_length": 47078055
+    "id": "http://json-schema.org/indexGenresInput#",
+    "title": "List genres",
+    "description": "Endpoint to list all musical genres and subgenres.",
+    "method": "GET",
+    "route": "/genres/",
+    "auth": false
 }
-```
-
-```python
-import imuze
-
-api = imuze.authorize("Token API_KEY_EXAMPLE")
-api.songs.post()
-```
-
-```ruby
-require 'imuze'
-
-api = imuze::APIClient.authorize!('Token API_KEY_EXAMPLE')
-api.songs.post
 ```
 
 
@@ -280,116 +96,38 @@ api.songs.post
 
 ```moonscript
 {
-    "title": "culpa sint ex vitae occaecati",
-    "musical_mode": "Ionian",
-    "arrangement_id": 24871639,
-    "timeline_url": "non inventore sed",
-    "mp3": "illo similique doloribus",
-    "status_channel": "eligendi"
-}
-```
-
-This endpoint create a song.
-
-### HTTP Request
-
-`POST https://api.imuze.io/api/4/songs`
-
-### Query Parameters
-
-Parameter | Type | Description
---------- | ----------- | -----------
-title | string | The title is the musical seed of your song.
-arrangement_id |  | 
-tags | array | 
-desired_length | integer | The desired duration of your song in senconds.
-
-
-<aside class="notice">
-Required properties are : title,arrangement_id,tags,desired_length
-</aside>
-
-
-<aside class="success">
-An authentication token is required for this route.
-</aside>
-
-<aside class="success">
-Remember — Results may vary according to your authentication scope !
-</aside>
-## Index songs
-
-
-
-```shell
-curl "https://api.imuze.io/api/4/songs"\
-  -H "Content-Type: application/json"\
-  -H "Authorization: Token API_KEY_EXAMPLE"\
-```
-
-```json
-{}
-```
-
-```python
-import imuze
-
-api = imuze.authorize("Token API_KEY_EXAMPLE")
-api.songs.get()
-```
-
-```ruby
-require 'imuze'
-
-api = imuze::APIClient.authorize!('Token API_KEY_EXAMPLE')
-api.songs.get
-```
-
-
-
-> The above command returns JSON structured like this:
-
-```moonscript
-{
-    "count": 34513667,
-    "response": [
+    "genres": [
         {
-            "id": 25922410,
-            "title": "et at et amet",
-            "status": "processing",
-            "mp3_url": null,
-            "arrangement_name": "quidem distinctio est"
+            "name": "veniam officia ut",
+            "subgenres": [
+                "pariatur ea",
+                "officia"
+            ]
         },
         {
-            "id": 85111158,
-            "title": "quia eligendi",
-            "status": "ready",
-            "mp3_url": null,
-            "arrangement_name": "maiores aut impedit adipisci"
+            "name": "ex incididunt magna",
+            "subgenres": [
+                "sed veniam consectetur",
+                "reprehenderit",
+                "adipisicing nostrud"
+            ]
         },
         {
-            "id": 42042199,
-            "title": "sint inventore",
-            "status": "processing",
-            "mp3_url": null,
-            "arrangement_name": "explicabo sed aut vel ut"
-        },
-        {
-            "id": 72333900,
-            "title": "amet doloribus delectus fugit ea",
-            "status": "processing",
-            "mp3_url": null,
-            "arrangement_name": "magni reiciendis maxime"
+            "name": "Duis sint",
+            "subgenres": [
+                "est reprehenderit enim",
+                "culp"
+            ]
         }
     ]
 }
 ```
 
-This endpoint retrieves a list of songs.
+Endpoint to list all musical genres and subgenres.
 
 ### HTTP Request
 
-`GET https://api.imuze.io/api/4/songs`
+`GET http://joplin.imuze.io/genres/`
 
 ### Query Parameters
 
@@ -399,6 +137,93 @@ Parameter | Type | Description
 
 <aside class="notice">
 Required properties are : 
+</aside>
+
+# Musics
+
+## Create a music
+
+
+
+```shell
+curl "http://joplin.imuze.io/musics"\
+  -H "Content-Type: application/json"\
+  -H "Authorization: API_KEY_EXAMPLE"\
+  -X POST -d '{"genre":"laboris paria","subgenre":"commodo veniam nis","duration_ms":29964,"structure":[{"start":0.6983029281254858,"duration":0.14079915545880795,"energy":"dynamic"},{"start":0.7808424669783562,"duration":0.7593265930190682},{"start":0.5336320374626666,"duration":0.6045300932601094,"energy":"dynamic"},{"start":0.8884022755082697,"duration":0.8417615587823093}],"voices_volume":-39}'
+```
+
+```json
+{
+    "genre": "laboris paria",
+    "subgenre": "commodo veniam nis",
+    "duration_ms": 29964,
+    "structure": [
+        {
+            "start": 0.6983029281254858,
+            "duration": 0.14079915545880795,
+            "energy": "dynamic"
+        },
+        {
+            "start": 0.7808424669783562,
+            "duration": 0.7593265930190682
+        },
+        {
+            "start": 0.5336320374626666,
+            "duration": 0.6045300932601094,
+            "energy": "dynamic"
+        },
+        {
+            "start": 0.8884022755082697,
+            "duration": 0.8417615587823093
+        }
+    ],
+    "voices_volume": -39
+}
+```
+
+
+
+> The above command returns JSON structured like this:
+
+```moonscript
+{
+    "id": "ut eu in mollit",
+    "genre": "Duis nostrud",
+    "subgenre": "eu esse irure officia",
+    "music_engine_version": "Duis reprehenderit magna",
+    "bpm": -84422265,
+    "measure": "4/4",
+    "duration_ms": 293813,
+    "structure": [
+        {
+            "start": 0.2889910754747689,
+            "duration": 0.6239416964817792
+        }
+    ]
+}
+```
+
+Endpoint to create a new music from a genre, subgenre, duration and a specific structure. A musical structure is an array of movements. Each movement has a duration and either an energy level (calm, medium, dynamic) or a type (intro, verse, refrain, ...). The movements will be played in the music following the same order they appears in the structure.
+
+### HTTP Request
+
+`POST http://joplin.imuze.io/musics`
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ----------- | -----------
+genre | string | musical genre
+subgenre | string | musical subgenre
+duration_ms | integer | music duration in milliseconds
+crop | boolean | if true, cut music at requested duration, possibly croping a measure.
+fadeout_ms | integer | duration of fadeout at the end of music.
+voices_volume | integer | volume of voices if any.
+structure | array | list of movement that specifies structure of music.
+
+
+<aside class="notice">
+Required properties are : genre,subgenre,duration_ms,structure
 </aside>
 
 
@@ -409,34 +234,20 @@ An authentication token is required for this route.
 <aside class="success">
 Remember — Results may vary according to your authentication scope !
 </aside>
-## Show a song
+## Get a music mp3
 
 
 
 ```shell
-curl "https://api.imuze.io/api/4/songs/:id"\
+curl "http://joplin.imuze.io/musics/:id/mp3"\
   -H "Content-Type: application/json"\
-  -H "Authorization: Token API_KEY_EXAMPLE"\
+  -H "Authorization: API_KEY_EXAMPLE"\
 ```
 
 ```json
 {
-    "id": 96065749
+    "id": "Duis sint"
 }
-```
-
-```python
-import imuze
-
-api = imuze.authorize("Token API_KEY_EXAMPLE")
-api.songs.get()
-```
-
-```ruby
-require 'imuze'
-
-api = imuze::APIClient.authorize!('Token API_KEY_EXAMPLE')
-api.songs.get
 ```
 
 
@@ -445,30 +256,102 @@ api.songs.get
 
 ```moonscript
 {
-    "id": 82796670,
-    "title": "fugit eius similique",
-    "status": "ready",
-    "mp3_url": null,
-    "arrangement_name": "consectetur accusantium unde",
-    "timeline_url": "maxime dolor ea"
+    "id": "commodo fugiat"
 }
 ```
 
-This endpoint shows a song.
+Endpoint to a music mp3 file.
 
 ### HTTP Request
 
-`GET https://api.imuze.io/api/4/songs/:id`
+`GET http://joplin.imuze.io/musics/:id/mp3`
 
 ### Query Parameters
 
 Parameter | Type | Description
 --------- | ----------- | -----------
-id | integer | The id of the song.
+id | string | id of a music previously generated.
 
 
 <aside class="notice">
-Required properties are : 
+Required properties are : id
+</aside>
+
+
+<aside class="success">
+An authentication token is required for this route.
+</aside>
+
+<aside class="success">
+Remember — Results may vary according to your authentication scope !
+</aside>
+## Get a music schema
+
+
+
+```shell
+curl "http://joplin.imuze.io/musics/:id/schema"\
+  -H "Content-Type: application/json"\
+  -H "Authorization: API_KEY_EXAMPLE"\
+```
+
+```json
+{
+    "id": "Ut"
+}
+```
+
+
+
+> The above command returns JSON structured like this:
+
+```moonscript
+{
+    "id": "irure reprehenderit incididunt officia",
+    "genre": "id nostrud labore",
+    "subgenre": "in",
+    "music_engine_version": "ipsum pariatur magna",
+    "bpm": 23078208,
+    "measure": "4/4",
+    "duration_ms": 238199,
+    "structure": [
+        {
+            "start": 0.5210838441271335,
+            "duration": 0.08891168748959899
+        },
+        {
+            "start": 0.17467262619175017,
+            "duration": 0.5250085059087723,
+            "energy": "dynamic"
+        },
+        {
+            "start": 0.9661083635874093,
+            "duration": 0.8867699133697897,
+            "movement": "incididunt ex velit"
+        },
+        {
+            "start": 0.4967353150714189,
+            "duration": 0.4002768991049379
+        }
+    ]
+}
+```
+
+Endpoint to get a music schema.
+
+### HTTP Request
+
+`GET http://joplin.imuze.io/musics/:id/schema`
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ----------- | -----------
+id | string | id of a music previously generated.
+
+
+<aside class="notice">
+Required properties are : id
 </aside>
 
 
